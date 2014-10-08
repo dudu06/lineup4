@@ -1,0 +1,55 @@
+<!-- Edit Page -->
+
+<div id="edit_form">
+
+<!-- <div class="container">
+    <div class="vertical-center-row">
+        <div align="center"></div> -->
+
+  <div class="edit col-sm-4 center-block">
+
+    <%= form_for @barber do |f| %>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+        <%= f.text_field :name, placeholder: "Change Name", :class => "form-control" %>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon" id="at-symbol-glyph">@</div>
+        <%= f.email_field :email, placeholder: "Update E-mail Address", class: "form-control" %><br />
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+        <%= f.password_field :password, placeholder: "Edit Password", :class => "form-control" %>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></div>
+        <%= f.text_field :low_price, placeholder: "Your lowest charge per haircut?", :class => "form-control" %>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-usd "></span></div>
+        <%= f.text_field :high_price, placeholder: "Your highest charge per haircut?", :class => "form-control" %>
+      </div>
+
+      <div class="input-group input-group-lg">
+        <div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
+        <%= f.text_field :bio, placeholder: "Add Swaggy bio...", class: "form-control" %>
+      </div>
+
+ 
+    </div>
+
+    <%= f.submit "Update", class: 'btn btn-primary btn lg btn-block' %>
+    <% end %>
+  </div>
+
+</div>
+</div>
+</div>
+
+</div> <!-- End of edit form -->

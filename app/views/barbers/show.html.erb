@@ -1,0 +1,42 @@
+<div id="container">
+
+
+
+<div class="content"> <!-- This is the red background -->
+		<div class="container-fluid">
+						<h1><%= @barber.name %></h1>
+			<div class="box">
+				<div class="row">
+					<div class="span6"></div>
+				<div class="col-lg-3">
+					<!-- This is the one used in the article -->
+				</div>
+				
+				
+				<div class="col-lg-5">
+					<div class="bio">
+					<p><%= @barber.bio %></p>
+					<p>Low Price: </p><p><%= @barber.low_price %></p> <p>High Price: </p><p><%= @barber.high_price %></p>
+					</div>
+				</div>
+				</div> <!-- row -->
+			</div> <!-- strip w/ hi, picture and bio -->
+		</div> <!-- container -->
+		<div class="container-fluid">
+			<div class="endorsements">
+
+				<div class="row">
+			<!--  -->
+				</div> <!-- end of 1st row of pictures -->
+			</div> <!-- end of endorsements -->
+		</div> <!-- end of container holding endorsements -->
+		<%#= current_user.is_a?(Customer) %>
+<%#= current_user.inspect %>
+
+
+</div> <!-- content div -->
+
+</div> <!-- container div -->
+
+
+

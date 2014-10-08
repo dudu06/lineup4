@@ -1,0 +1,46 @@
+<!-- To make the avatar
+
+<image_tag current_user.image.url, size "25x25" >
+Hi, Geronimo
+
+This picture would be on your logged in page...
+ -->
+
+
+     
+
+<% if current_user %> 
+<div class="navbar transparent navbar">
+	<nav class="navbar navbar-default" role="navigation"> 
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+
+				<div class ="brand">
+					<!-- A picture of the brand should go here -->
+				</div>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class =""><%= link_to "Edit Profile", edit_barber_path %></li>
+				<li class =""><%= link_to "Logout", session_path, method: :delete, html:{style:"color: black;"} %></li>
+			</li>
+
+<% elsif !current_user %> 
+
+<div class="navbar transparent navbar">
+	<nav class="navbar navbar-default" role="navigation"> 
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+
+				<div class ="brand">
+					<a class="navbar-brand" style="color: black;" href="http://localhost:3000"> Menu </a>
+				</div>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li class =""><%= link_to "Login", new_session_path, method: :get %></li>
+    <% end %>
+  </ul>
+</nav> 
