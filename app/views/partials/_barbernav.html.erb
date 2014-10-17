@@ -1,15 +1,5 @@
-<!-- To make the avatar
 
-<image_tag current_user.image.url, size "25x25" >
-Hi, Geronimo
-
-This picture would be on your logged in page...
- -->
-
-
-     
-
-<% if current_user  %> 
+<% if current_barber %> 
 <div class="navbar transparent navbar">
 	<nav class="navbar navbar-default" role="navigation"> 
 		<div class="container-fluid">
@@ -22,12 +12,13 @@ This picture would be on your logged in page...
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-			<%= image_tag current_customer.avatar.url(:thumb), class: "img-circle img-profile", width: 34 %>   
-				<li class =""><%= link_to "Edit Profile", edit_customer_path %></li>
-				<li class =""><%= link_to "Logout", session_path, method: :delete, html:{style:"color: black;"} %></li>
+				 <%= image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 34 %>   
+			<li class =""><%= link_to "New Profile", new_barber_portfolio_path(@barber) %></li>
+				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_barber) %></li>
+				<li class =""><%= link_to "Logout", session_path(current_barber), method: :delete, html:{style:"color: black;"} %></li>
 			</li>
 
-<% elsif !current_user  %> 
+<% elsif !current_barber %> 
 
 <div class="navbar transparent navbar">
 	<nav class="navbar navbar-default" role="navigation"> 
@@ -43,8 +34,6 @@ This picture would be on your logged in page...
 			<ul class="nav navbar-nav navbar-right">
 				<li class =""><%= link_to "Login", new_session_path, method: :get %></li>
     <% end %>
-
     
   </ul>
 </nav> 
-

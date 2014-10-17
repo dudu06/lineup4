@@ -20,7 +20,8 @@ class BarbersController < ApplicationController
 
 	def show
 		@barber = Barber.find(params[:id])
-		# binding.pry
+		@portfolio = Portfolio.where(:barber_id => @barber.id)
+		
 	end
 
 	def edit
@@ -39,7 +40,7 @@ class BarbersController < ApplicationController
 	def barber_params
 		params.require(:barber).permit(:name, 
 		:email, :password, :password_confirmation, 
-		:low_price, :high_price, :bio)
+		:low_price, :high_price, :bio, :avatar)
 	end
 
 end

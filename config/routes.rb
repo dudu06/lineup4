@@ -1,8 +1,11 @@
 Lineup4::Application.routes.draw do
 
+
 root 'pages#home'
 
-resources :barbers
+resources :barbers do
+  resources :portfolios
+end
 
 resources :customers
 
