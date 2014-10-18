@@ -1,15 +1,6 @@
-<!-- To make the avatar
 
-<image_tag current_user.image.url, size "25x25" >
-Hi, Geronimo
+<% if current_barber %> 
 
-This picture would be on your logged in page...
- -->
-
-
-     
-
-<% if current_user  %> 
 <div class="navbar transparent navbar">
 	<nav class="navbar navbar-default" role="navigation"> 
 		<div class="container-fluid">
@@ -22,12 +13,36 @@ This picture would be on your logged in page...
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-			<%= image_tag current_customer.avatar.url(:thumb), class: "img-circle img-profile", width: 34 %>   
-				<li class =""><%= link_to "Edit Profile", edit_customer_path %></li>
-				<li class =""><%= link_to "Logout", session_path, method: :delete, html:{style:"color: black;"} %></li>
+
+			<%= image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>    <li class =""><%= link_to "New Picture", new_barber_portfolio_path(current_barber) %></li>
+				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_barber) %></li>
+				<li class =""><%= link_to "Logout", session_path(current_barber), method: :delete, html:{style:"color: black;"} %></li>
 			</li>
 
-<% elsif !current_user  %> 
+			 
+
+<% elsif current_user %> 
+
+<div class="navbar transparent navbar">
+	<nav class="navbar navbar-default" role="navigation"> 
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+
+				<div class ="brand">
+					<!-- A picture of the brand should go here -->
+				</div>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+			<%= image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 34 %>   
+				<li class =""><%= link_to "Edit Profile", edit_customer_path(current_user) %></li>
+				<li class =""><%= link_to "Logout", session_path(current_user), method: :delete, html:{style:"color: black;"} %></li>
+			</li>
+
+
+
+<% else !current_barber || !current_user %> 
 
 <div class="navbar transparent navbar">
 	<nav class="navbar navbar-default" role="navigation"> 
@@ -42,9 +57,13 @@ This picture would be on your logged in page...
 
 			<ul class="nav navbar-nav navbar-right">
 				<li class =""><%= link_to "Login", new_session_path, method: :get %></li>
-    <% end %>
 
+
+				
+				<% end %>
     
   </ul>
 </nav> 
 
+<!-- barber is dudu06@juno.com
+customer is jeremidudu@gmail.com -->

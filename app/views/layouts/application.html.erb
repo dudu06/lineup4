@@ -7,11 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%# if current_user %>
-<%#= render 'partials/nav' %>
-<%# else %>
-<%#= render 'partials/barbernav' %>
-<%# end %>
+<% if current_barber || current_user %>
+<%= render 'partials/nav' %>
+<% else %>
+<%= render 'partials/nav' %>
+<% end %>
+
 
 <%= yield %>
 

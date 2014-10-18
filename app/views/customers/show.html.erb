@@ -1,6 +1,14 @@
 TEST
 
+
+
+
+
+
+
 <h1><%= @customer.name %></h1>
 
 <h1><%= image_tag @customer.avatar %></h1>
+
+ <%= link_to "Log Out", session_path, method: :delete, class: 'btn btn-primary btn-lg' %></a></p>
 	

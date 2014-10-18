@@ -2,26 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.thumbnail {
+	margin-bottom: 7px;
+}
+
 #edit_form {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/*html, body, .container {
-    height: 100%;
+.img-circle {
+    border-radius: 50%;
 }
-.container {
-    display: table;
-    vertical-align: middle;
+
+.page-divider {
+	border-style: line;
+	border-width: 5px;
+	color: gray;
+	width: 300px;
 }
-.vertical-center-row {
-    display: table-cell;
-    vertical-align: middle;
-}*/
+
+body {
+	background-color: #E4E4E0;
+}
 
 h1 {
 	text-align: center;
 	margin: auto;
+}
+
+h2 {
+	text-align: center;
+	margin: auto;
+	color: rgba(0,0,0,0.51);
 }
 
 p {
@@ -42,17 +55,6 @@ p {
 	margin-left: 30px;
 }
 
-/*.left_column {
-	width: 420px;
-	height: 1200px;
-	background-color: red;
-	padding-left: 30px;
-	margin-left: 20px;
-	display: block;
-	float: left;
-}*/
-
-
 
 
 #edit_form {
@@ -67,15 +69,29 @@ p {
 }
 
 
+
 .content {
-	width: 100%;
-	height: 660px;
-	background-color: #F64744;
+	max-width: 940px;
+	margin: 0 auto;
+	height: 958px;
+	padding: 0 5%;
+	background-color: #E4E4E0;
 	padding-right: 30px;
 	margin-right: 20px;
 	display: block;
 	margin: 0 auto;	
 	padding-top: 47px;
+}
+
+#wrapper {
+	/*We want the width to be no more than 940px across*/
+	max-width: 940px;
+	/*0 is top and the bottom. Auto is the left and right. 
+	Margin is the space outside our div*/
+	margin: 0 auto;
+	/*0 is top and bottom. 5 is left and right. 
+	Padding the space inside our div*/
+	padding: 0 5%;
 }
 
 .box {
@@ -88,22 +104,6 @@ p {
 	margin: 0 auto;
 }
 
-.box_picture1 {
-	background-color: black;
-	width: 200px;
-	height: 200px
-}
-
-.box_picture2 {
-	background-color: black;
-	width: 200px;
-	height: 200px
-}
-
-#greeting {
-	max-width: 700px;
-}
-
 .bio {
 	background-color: black;
 	width: 500px;
@@ -111,17 +111,71 @@ p {
 	margin: 0 auto;
 }
 
-.endorsements {
-	width: 100%;
-	height: 374px;
-	padding-top: 2%;
-	border-style: dotted;
-}
-
 .barber_search {
 	text-align: center;
 }
 
-ul {
+/**********
+CONTACT INFO
+***********/
+
+.contact-info {
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	font-size: 0.9em;
 	text-align: center;
+}
+
+.contact-info li {
+	display: inline-block;
+	min-height: 20px;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding: 0 0 0 30px;
+	margin: 0 10px 10px;
+}
+
+.glyphicon-home {
+	margin: 5px;
+}
+
+.glyphicon-envelope {
+	padding: 5px;
+}
+
+/**********
+GALLERY
+***********/
+
+
+.barber-pics {
+	margin: 0;
+	padding: 0;
+	/*list style removes the bullet points*/
+	list-style: none;
+}
+
+.barber-pics li {
+	/*Our float removes the images stacked 
+	and makes them side by side*/
+	float: left;
+	/*The images take up 45% of the width no 
+	matter the size of the browser window. 
+	45 also gives us our two columns with 10% space in 
+	between them*/
+	width: 58%;
+	/*Each image has a margin of 2.5% 
+	on the left and right sides. 2.5 x 4 is 10! 
+	So we get 100% with the width and margin*/
+	margin: 2%;
+	background-color: #f5f5f5;
+	color: #bdc3c7;
+}
+
+.barber-pics li p {
+	margin: 0;
+	padding: 3%;
+	font-size: 0.75em;
+	color: #bdc3c7;
 }

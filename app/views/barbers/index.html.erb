@@ -1,1 +1,11 @@
-index.html.erb
+<%= form_tag barbers_path, :method => 'get', :id => "barbers_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%#= submit_tag "Search" %>
+  </p>
+ 
+<% end %>
+
+<div id="barbers">
+<%= render 'barbers' %>
+</div>

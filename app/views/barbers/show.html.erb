@@ -5,41 +5,33 @@
 <div class="content"> <!-- This is the red background -->
 		<div class="container-fluid">
 							<h1><%#= image_tag @barber.avatar %></h1>
+						<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
 						<h1><%= @barber.name %></h1>
-			<div class="box">
-				<div class="row">
-					<div class="span6"></div>
-				<div class="col-lg-3">
-					<!-- This is the one used in the article -->
-				</div>
-				
-				
-				<div class="col-lg-5">
-					<div class="bio">
-					<p><%= @barber.bio %></p>
-					<p>Low Price: </p><p><%= @barber.low_price %></p> <p>High Price: </p><p><%= @barber.high_price %></p>
+						<h2><%= @barber.bio %></h2>
+
+						<ul class="contact-info">	
+							<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
+							<li><span class="glyphicon glyphicon-envelope"><%= @barber.email %></span></li>
+							<li><span class="glyphicon glyphicon-usd"><%= @barber.low_price %>-<%= @barber.high_price %></span></li>
+						</ul>
+
+						<div class="page-divider">
+
+				<div class="container">
+					<div class="row">	
+						<div class="col-lg-9 col-sm-6 col-xs-6">
+							<% @portfolio.each do |p| %>
+							<p><%= p.title %></p>
+							<p><%= p.description %></p>
+							
+							<%= image_tag p.photo(:medium), class: "thumbnail img-responsive", width: 350, height: 150, borderradius: 30 %>
+							<% end %>
+							
+<%= will_paginate @portfolio %>	
+						</div>
+						</div>
 					</div>
 				</div>
-				</div> <!-- row -->
-			</div> <!-- strip w/ hi, picture and bio -->
-		</div> <!-- container -->
-		<div class="container-fluid">
-			<div class="endorsements">
-
-				<div class="row">
-			<% @portfolio.each do |p| %>
-
-				<%= p.title %>
-				<%= p.description %>
-				<%= image_tag p.photo %>
-				<% end %>
-			<!--  -->
-				</div> <!-- end of 1st row of pictures -->
-			</div> <!-- end of endorsements -->
-		</div> <!-- end of container holding endorsements -->
-		<%#= current_user.is_a?(Customer) %>
-<%#= current_user.inspect %>
-
 
 </div> <!-- content div -->
 

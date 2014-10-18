@@ -16,3 +16,13 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+ 
+  $("#barbers_search input").keyup(function() {
+    $.get($("#barbers_search").attr("action"), $("#barbers_search").serialize(), null, "script");
+    return false;
+  });
+  
+});
+

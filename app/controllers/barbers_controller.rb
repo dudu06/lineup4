@@ -1,7 +1,7 @@
 class BarbersController < ApplicationController
 
 	def index
-		@barbers = Barber.all 
+		@barbers = Barber.search(params[:search])
 	end
 
 	def new
@@ -20,7 +20,7 @@ class BarbersController < ApplicationController
 
 	def show
 		@barber = Barber.find(params[:id])
-		@portfolio = Portfolio.where(:barber_id => @barber.id)
+		@portfolio = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 5, :page => params[:page])
 		
 	end
 
@@ -40,7 +40,7 @@ class BarbersController < ApplicationController
 	def barber_params
 		params.require(:barber).permit(:name, 
 		:email, :password, :password_confirmation, 
-		:low_price, :high_price, :bio, :avatar)
+		:low_price, :high_price, :bio, :avatar, :zipcode)
 	end
 
 end
