@@ -22,8 +22,8 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portfolio = Portfolio.new
-    
+    # @portfolio = Portfolio.new
+    @portfolio = Portfolio.find(params[:id])
   end
 
   def edit

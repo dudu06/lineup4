@@ -121,8 +121,9 @@ CONTACT INFO
 
 .contact-info {
 	list-style: none;
-	padding: 10px;
-	margin: 0;
+	
+	padding: 2% 0 4% 0;
+	margin: 0 auto;
 	font-size: 0.9em;
 	text-align: center;
 }
@@ -136,13 +137,15 @@ CONTACT INFO
 	margin: 0 10px 10px;
 }
 
-.glyphicon-home {
-	margin: 5px;
+
+
+.contact-info li a {
+	margin: 5%;
+	padding: 3%;
+	padding-bottom: 2%;
+
 }
 
-.glyphicon-envelope {
-	padding: 5px;
-}
 
 /**********
 GALLERY
@@ -179,3 +182,83 @@ GALLERY
 	font-size: 0.75em;
 	color: #bdc3c7;
 }
+
+#b-picture {
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	list-style: none;
+}
+
+#overlay {
+/*	background: rgba(0,0,0,.25);
+	text-align: center;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: opacity .55s ease;*/
+}
+
+
+#b-picture:hover #overlay {
+	opacity: 1;
+	color: black;
+}
+
+#b-picture:hover #overlay li {
+	/*background: rgba(1,0,0,.25);*/
+	background: rgba(255,255,255,0.96);
+	text-align: center;
+	padding: 0;
+	opacity: 0.5;
+	-webkit-transition: opacity .55s ease;
+	font-color: black;
+	list-style: none;
+}
+
+#b-picture:hover #overlay li a {
+	text-decoration: none;
+	color: black;
+}
+
+#b-picture:hover #overlay li a  p {
+	color: black;
+	padding: 2px 0 1px 0;
+	font-family: Helvetica;
+	font-weight: 900;
+	color: gray;
+	font-size: 9;
+}
+
+#plus {
+	font-family: Helvetica;
+	font-weight: 900;
+	/*color:rgba(255,255,255,.85);*/
+	color: black;
+	font-size: 13;
+}
+
+.img-responsive {
+	padding: 15px;
+	margin: 0 auto;
+}
+/*
+.row {
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 0 5%;
+}
+
+.row .clearfix ul li {
+	float: left;
+}*/
+
+.profile-head {
+	position: relative;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
+
+}
+
+ol .dribble group {
+	margin: 0 auto;
+}
+
