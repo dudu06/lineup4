@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017193118) do
+ActiveRecord::Schema.define(version: 20141021211707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,21 @@ ActiveRecord::Schema.define(version: 20141017193118) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  create_table "comments", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content"
+    t.integer  "portfolio_id"
+    t.integer  "barber_id"
+    t.integer  "customer_id"
+    t.string   "customername"
+    t.string   "barbername"
+  end
+
+  add_index "comments", ["barber_id"], name: "index_comments_on_barber_id", using: :btree
+  add_index "comments", ["customer_id"], name: "index_comments_on_customer_id", using: :btree
+  add_index "comments", ["portfolio_id"], name: "index_comments_on_portfolio_id", using: :btree
 
   create_table "customers", force: true do |t|
     t.string   "email"

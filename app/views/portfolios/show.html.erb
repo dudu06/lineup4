@@ -1,5 +1,34 @@
 <h1>Portfolios#show</h1>
 <p>Find me in app/views/portfolios/show.html.erb</p>
 
-<% @barber.portfolio %>
+<li><%= image_tag @portfolio.photo(:medium), class: "img-responsive", width: 400 %></li>
 
+<% @portfolio.comments.each do |p| %>
+
+<%= p.customername %>
+
+<%= p.barbername %>
+<br>
+<%= p.content %>
+
+<% end %>
+
+
+
+	<% if current_barber %>
+	<%= form_for [@barber,@portfolio,@comment]  do |f| %>
+		<div class="form-group">
+		<%= f.hidden_field :barbername, :value => current_barber.name %>
+			<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
+			</div>
+
+
+	<% end %>
+<% else %>
+	<%= form_for [@barber,@portfolio,@comment]  do |f| %>
+		<div class="form-group">
+		<%= f.hidden_field :customername, :value => current_user.name %>
+			<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
+			</div>
+	<% end %>
+<% end %>

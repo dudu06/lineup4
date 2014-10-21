@@ -22,8 +22,10 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    # @portfolio = Portfolio.new
+    @barber = Barber.find(params[:barber_id])
     @portfolio = Portfolio.find(params[:id])
+    @comment = Comment.new
+    
   end
 
   def edit
