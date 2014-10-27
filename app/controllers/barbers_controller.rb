@@ -21,7 +21,8 @@ class BarbersController < ApplicationController
 	def show
 		@barber = Barber.find(params[:id])
 		@portfolio = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 5, :page => params[:page])
-		
+		# Added in by my self below - doesn't work
+		@portfolios = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 5, :page => params[:page])
 	end
 
 	def edit

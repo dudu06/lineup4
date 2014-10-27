@@ -20,19 +20,25 @@
 
 		<!-- <div class="container"> --> <!-- This container is actually making our pictures center differently  -->
 		<div class="row">	
+		
 			<% @portfolio.each do |p| %>
+		
 
 			<!-- 	<div id="b-picture"> --> 
 
 			<!-- <div id="overlay"> -->
-			<div id="picture-holder" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div id="picture-holder" class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 				<ol>
 					<a class="overlay">		
+						<a href="<%= barber_portfolio_path(@barber, p) %>">
 						<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
 						<p><%= p.title %></br><%= p.description %></p>
+						</a>
 					</a>
 				</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
+			
+	
 				<%= will_paginate @portfolio %>	
 				</ol>
 			</div>
@@ -42,4 +48,6 @@
 	</div> <!-- end of main div -->
 
 </div> <!-- end of wrapper div -->
+
+
 

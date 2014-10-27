@@ -1,10 +1,17 @@
 Lineup4::Application.routes.draw do
 
 
+  get "comments/new"
+  get "comments/create"
+  get "comments/edit"
+  get "comments/update"
+  get "comments/destroy"
 root 'pages#home'
 
 resources :barbers do
-  resources :portfolios
+  resources :portfolios do 
+  	resources :comments
+	end
 end
 
 resources :customers
