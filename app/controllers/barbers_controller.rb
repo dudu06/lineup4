@@ -8,6 +8,33 @@ class BarbersController < ApplicationController
 		@barbers = Barber.new
 	end
 
+# SOCIALIZATION GEM METHOD
+	def followers
+    @barber = Barber.find(params[:id])
+    @followers = @barber.followers(Barber)
+    @barbers = Barber.all
+   
+    response = {:user => @user, :followers => @followers, :users => @users}
+
+	    respond_to do |format|
+	      format.html  #followers.html.erb
+	      format.xml {render :xml => response}
+	    end
+    end
+
+    def following
+     @barber = Barber.find(params[:barber])
+     @following = @barber.followers(Barber)
+     @barbers = Barber.all
+
+     response = {:barber => @barber, :following => @following, :barbers => @barbers}
+	
+     respond_to do |format|
+      format.html  #following.html.erb
+      format.xml {render :xml => response}
+    end
+    end
+
 	def create 
 		@barber = Barber.new(barber_params)
 		if @barber.save
@@ -20,9 +47,7 @@ class BarbersController < ApplicationController
 
 	def show
 		@barber = Barber.find(params[:id])
-		@portfolio = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 5, :page => params[:page])
-		# Added in by my self below - doesn't work
-		@portfolios = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 5, :page => params[:page])
+		@portfolio = Portfolio.where(:barber_id => @barber.id).paginate(:per_page => 6, :page => params[:page])
 	end
 
 	def edit

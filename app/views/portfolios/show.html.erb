@@ -1,26 +1,36 @@
 <h1>Portfolios#show</h1>
 
 
+
 <%= image_tag @portfolio.photo(:medium), class: "img-responsive", width: 400 %>
 
-<% @portfolio.comments.each do |p| %>
+<% if @barber == current_barber %>
+<%= link_to "Edit Picture", edit_barber_portfolio_path, class: 'btn btn-primary btn-lg' %>
+<% end %> <br>
 
+
+
+
+<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+<% @portfolio.comments.each do |p| %>
 <%= p.customername %>
+</div>
 
 <strong><%= p.barbername %></strong><%= image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
 <br>
-
-
 <% end %>
 
 
 
 	<% if current_barber %>
 	<%= form_for [@barber,@portfolio,@comment]  do |f| %>
-		<div class="form-group">
-		<%= f.hidden_field :barbername, :value => current_barber.name %>
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="form-group">
+			<%= f.hidden_field :barbername, :value => current_barber.name %>
 			<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
 			</div>
+		</div>
+
 
 
 	<% end %>
@@ -32,3 +42,9 @@
 			</div>
 	<% end %>
 <% end %>
+
+
+
+
+
+

@@ -1,69 +1,98 @@
 
 <% if current_barber %> 
 
-<div class="navbar transparent navbar">
-	<nav class="navbar navbar-default" role="navigation"> 
+	
+	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-
-				<div class ="brand">
-					<!-- A picture of the brand should go here -->
-				</div>
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a href="<%= barbers_path %>" class="navbar-brand">
+		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
+		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
+		      </a>
 			</div>
 
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<a class="navbar-brand"><%= link_to (image_tag "logo-logo.png", size: "12x50", class: "text-center logo"), barber_path(current_barber) %>
 			<ul class="nav navbar-nav navbar-right">
-
-			<%= image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>    <li class =""><%= link_to "New Picture", new_barber_portfolio_path(current_barber) %></li>
+				<li class =""><%= link_to "Find Barbers", barbers_path %></li>
+				<li class =""><%= link_to "New Picture", new_barber_portfolio_path(current_barber) %></li>
 				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_barber) %></li>
 				<li class =""><%= link_to "Logout", session_path(current_barber), method: :delete, html:{style:"color: black;"} %></li>
-			</li>
+				<li class =""><%= link_to (image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), barber_path(current_barber) %></li>
+		
 
 			 
 
 <% elsif current_user %> 
 
-<div class="navbar transparent navbar">
-	<nav class="navbar navbar-default" role="navigation"> 
+<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-
-				<div class ="brand">
-					<!-- A picture of the brand should go here -->
-				</div>
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a href="<%= barbers_path %>" class="navbar-brand">
+		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
+		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
+		      </a>
 			</div>
 
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-			<%= image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 34 %>   
-				<li class =""><%= link_to "Edit Profile", edit_customer_path(current_user) %></li>
+				<li class =""><%= link_to "Find Barbers", barbers_path %></li>
+				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_barber) %></li>
 				<li class =""><%= link_to "Logout", session_path(current_user), method: :delete, html:{style:"color: black;"} %></li>
-			</li>
+				<li class =""><%= link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), customer_path(current_user) %></li>
+
 
 
 
 <% else !current_barber || !current_user %> 
 
-<div class="navbar transparent navbar">
-	<nav class="navbar navbar-default" role="navigation"> 
+
+	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-
-				<div class ="brand">
-					<a class="navbar-brand" style="color: black;" href="http://localhost:3000"> Menu </a>
-				</div>
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a href="<%= barbers_path %>" class="navbar-brand">
+		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
+		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
+		      </a>
 			</div>
 
-			<ul class="nav navbar-nav navbar-right">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<!-- 	<a class="navbar-brand"><%= image_tag "logo-logo.png", size: "12x50", class: "text-center logo" %> -->
+			<ul class="nav navbar-nav navbar-right">				
 				<li class =""><%= link_to "Login", new_session_path, method: :get %></li>
-
-
 				
-				<% end %>
-    
-  </ul>
-</nav> 
+<% end %>
+</ul><!-- end of ul -->
+</nav> <!-- end of nav bar -->
+</div> <!-- end of nav bar collapse -->
 
+
+
+
+
+
+
+<!-- paul kim barber is ga@yahoo.com -->
 <!-- barber is dudu06@juno.com
 customer is jeremidudu@gmail.com -->

@@ -1,3 +1,21 @@
+<script>
+$(function() {
+ 
+  $("#barbers_search input").keyup(function() {
+    $.get($("#barbers_search").attr("action"), $("#barbers_search").serialize(), null, "script");
+    return false;
+  });
+  
+});
+
+
+</script>
+
+<div class="find-barber">
+<h1>Enter Your Zipcode and <br>Find a Barber</h1>
+</div>
+
+
 <%= form_tag barbers_path, :method => 'get', :id => "barbers_search" do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -6,6 +24,8 @@
  
 <% end %>
 
+
 <div id="barbers">
 <%= render 'barbers' %>
 </div>
+

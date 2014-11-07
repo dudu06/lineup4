@@ -1,8 +1,7 @@
-
 <% @barbers.each do |b| %>
-
-<%= b.name %>
-<%= image_tag b.avatar.url(:medium) %>
-
-
+<br>
+<%= link_to (image_tag b.avatar.url(:medium), class: "img-square", width: 300, height: 300), barber_path(b) %>
+<%= b.name %> 
+<!-- image_tag b.avatar.url(:medium). This would allow us to link our image  -->
 <% end %>
+

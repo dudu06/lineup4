@@ -16,3 +16,51 @@
 @import 'bootstrap';
 
 /* IN ORDER FOR BOOTSTRAP TO WORK YOU MUST ADD .SCSS AT THE END OF THE FILE NAME.*/
+
+
+
+/****************************
+Home Page once logged in
+****************************/
+
+.btn-info {
+	background-color: #4388C3;
+}
+
+
+.logo {
+	margin: auto;
+	text-align: center;
+}
+
+.navbar-right a, .img-profile {
+	text-align: center;
+}
+
+.container-fluid , #bs-example-navbar-collapse-1 {
+	max-height: 400px;
+}
+
+/*This is the search bar on the barbers index page*/
+p , #search {
+	padding-top: 2%;
+	margin: 0 auto;
+	max-width: 200px;
+}
+
+/*This is the instruction on barber index*/
+.find-barber h1 {
+	margin-left: 0 auto;
+}
+
+/*This centers the main id that holds 
+profile pic, bio, price and gallery*/
+#main , .row {
+	margin: 0 auto;
+}
+
+li > .glyphicon {
+	margin: 5%;
+}
+
+

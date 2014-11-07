@@ -7,9 +7,10 @@
 			<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
 			<h1><%= @barber.name %></h1>
 			<h2><%= @barber.bio %></h2>
-
+			
 			<ul class="contact-info">
-
+				<%= link_to 'Follow Barber', barber_follow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+				<%= link_to 'UNFollow Barber', barber_unfollow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
 				<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
 				<%= mail_to @barber.email do %>
 				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
@@ -27,7 +28,7 @@
 			<!-- 	<div id="b-picture"> --> 
 
 			<!-- <div id="overlay"> -->
-			<div id="picture-holder" class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
 				<ol>
 					<a class="overlay">		
 						<a href="<%= barber_portfolio_path(@barber, p) %>">
@@ -49,5 +50,6 @@
 
 </div> <!-- end of wrapper div -->
 
-
+<!-- TO GET A COUNT OF HOW MANY TIMES A PICTURE WAS LIKED PUT THIS: -->
+<!-- @portfolios.likes.count  -->
 

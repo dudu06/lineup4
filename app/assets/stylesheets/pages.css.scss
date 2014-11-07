@@ -1,11 +1,27 @@
+/****************************
+Root Page
+****************************/
+
+
+.logo-home-page {
+	padding-top: 100px;
+}
+
+.sign-up {
+	text-align: center;
+	padding-top: 10px;
+}
+
+
 .header {
-	background-image: url('Barber.jpg');
+	background-image: url('background2.png');
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 900px;
+    height: 710px;
+    margin-top: -23px;
 }
 
 .barber_button {
@@ -13,5 +29,10 @@
 	height: 60px;
 	background-color: blue;
 	border-radius: 40px;
+}
+
+.log-in {
+	text-align: center;
+	padding-top: 5%;
 }
 

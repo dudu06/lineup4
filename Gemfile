@@ -78,6 +78,12 @@ gem 'rails_12factor', group: :production
 # THIS IS THE SECOND GEM NEEDED FOR GETTING APP ON HEROKU
 gem "unicorn"
 
+# GEM FOR FOLLOWS,LIKES,ETC.
+gem "socialization"
+
+
+# ÷gem 'acts_as_votable', '~> 0.10.0'
+
 
 # RUBY '2.1.2' IS NEEDED TO GET APP ON HEROKU. FIRST GEM NEEDED
 ruby "2.1.2"

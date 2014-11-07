@@ -37,3 +37,11 @@ class CommentsController < ApplicationController
   end
 
 end
+
+
+@follow = @barber.follows.new(follower_params)
+
+
+
+def follower_params
+  params.require(:follow).permit(:)

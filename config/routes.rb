@@ -14,6 +14,30 @@ resources :barbers do
 	end
 end
 
+# # Added this in for socialization gem to work
+# resources :customers do
+#   member do
+#     post :follow
+#     end
+# end
+
+# # Added this in for socialization gem to work again with barbers
+# resources :barbers do
+#   member do
+#     post :follow
+#     end
+# end
+
+resources :customers do
+  post 'follow',   to: 'socializations#follow'
+  post 'unfollow', to: 'socializations#unfollow'
+end
+
+resources :barbers do
+  post 'follow',   to: 'socializations#follow'
+  post 'unfollow', to: 'socializations#unfollow'
+end
+
 resources :customers
 
 resources :sessions, only: [:new, :create, :destroy]
