@@ -62,6 +62,16 @@ class PortfoliosController < ApplicationController
    redirect_to barber_path(current_barber)
   end
 
+# THIS LIKE IS USED FOR SOCIALIZATIONS
+  def like
+    if @portfolio.liked_by current_user
+    redirect_to barber_path(@customer)
+    else
+      @portfolio.liked_by current_barber
+    redirect_to barber_path(@barber)
+    end 
+  end
+
   def portfolio_params
     params.require(:portfolio).permit(:title, 
     :description, :photo, :barber_id)

@@ -7,10 +7,18 @@
 			<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
 			<h1><%= @barber.name %></h1>
 			<h2><%= @barber.bio %></h2>
+
 			
 			<ul class="contact-info">
+				<% if @barber == current_barber && { follow: false } %>
 				<%= link_to 'Follow Barber', barber_follow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
-				<%= link_to 'UNFollow Barber', barber_unfollow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+			
+				<% else @barber == current_barber && {follow: true} %>
+				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+				<% end %> 
+				<%= @barber.followers(Barber || Customer).count %><span>follows</span>
+				<%= @barber.followables(Barber || Customer).count %><span>following</span>
+
 				<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
 				<%= mail_to @barber.email do %>
 				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
@@ -21,7 +29,6 @@
 
 		<!-- <div class="container"> --> <!-- This container is actually making our pictures center differently  -->
 		<div class="row">	
-		
 			<% @portfolio.each do |p| %>
 		
 
@@ -38,10 +45,9 @@
 					</a>
 				</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
-			
-	
-				<%= will_paginate @portfolio %>	
 				</ol>
+
+				<%= will_paginate @portfolio %>	
 			</div>
 		</div> <!-- end of row div -->
 		<!-- </div> --> <!-- end of container div -->
@@ -52,4 +58,5 @@
 
 <!-- TO GET A COUNT OF HOW MANY TIMES A PICTURE WAS LIKED PUT THIS: -->
 <!-- @portfolios.likes.count  -->
+
 

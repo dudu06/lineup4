@@ -2,6 +2,7 @@ class Barber < ActiveRecord::Base
 	has_secure_password 
   acts_as_followable
   acts_as_follower
+  acts_as_liker
   # acts_as_voter
   has_many :comments
 	has_many :portfolios

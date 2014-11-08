@@ -224,6 +224,23 @@ GALLERY
 .img-responsive {
 	padding: 15px;
 	margin: 0 auto;
+	border: 1px;
+	border-color: white;
+	border-style: solid;
+	background-color: white;
+    /*Added in for hover effect below*/
+    opacity: 1;
+    transition: opacity .40s ease-in-out;
+    -webkit-transition: opacity .40s ease-in-out;
+    -moz-transition: opacity .40s ease-in-out;
+    -o-transition: opacity .40s ease-in-out;
+}
+
+.img-responsive:hover {
+	border: 3px;
+	border-style: solid;
+	border-color: white;
+    opacity: 0.55;
 }
 
 
@@ -275,5 +292,14 @@ ol .dribble-group {
 }
 
 .profile-head {
+
+}
+
+
+p {
+/*	display: none;*/
+}
+
+#picture-holder, ol, .overlay, a, li, p:hover {
 
 }

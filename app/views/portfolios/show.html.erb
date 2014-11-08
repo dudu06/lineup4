@@ -16,11 +16,14 @@
 <%= p.customername %>
 </div>
 
-<strong><%= p.barbername %></strong><%= image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
+<strong><%= p.barbername %></strong><%= image_tag current_barber.avatar.url(:thumb), 
+			class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
 <br>
 <% end %>
 
-
+<%= link_to 'Like Picture', barber_like_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+<%= @portfolio.likers(Barber || Customer).count %><span>likes</span>
+<%= link_to 'BoomThis', 'portfolios/like', :class => 'wtxt nuvo' %> 
 
 	<% if current_barber %>
 	<%= form_for [@barber,@portfolio,@comment]  do |f| %>

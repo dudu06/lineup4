@@ -28,6 +28,7 @@ end
 #     end
 # end
 
+
 resources :customers do
   post 'follow',   to: 'socializations#follow'
   post 'unfollow', to: 'socializations#unfollow'
@@ -36,6 +37,8 @@ end
 resources :barbers do
   post 'follow',   to: 'socializations#follow'
   post 'unfollow', to: 'socializations#unfollow'
+  post 'like',   to: 'socializations#like'
+  post 'unlike', to: 'socializations#unlike'
 end
 
 resources :customers

@@ -1,6 +1,7 @@
 class Customer < ActiveRecord::Base
 	acts_as_followable
     acts_as_follower
+    acts_as_liker
     # acts_as_voter
 	has_secure_password 
 	has_many :comments
