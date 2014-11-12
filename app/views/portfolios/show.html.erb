@@ -21,9 +21,17 @@
 <br>
 <% end %>
 
-<%= link_to 'Like Picture', barber_like_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+
+<% if current_barber.likes?(@portfolio)  %>
+<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<% else %>
+<%= link_to 'Like Picture', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+
+<% end %>
+
+
 <%= @portfolio.likers(Barber || Customer).count %><span>likes</span>
-<%= link_to 'BoomThis', 'portfolios/like', :class => 'wtxt nuvo' %> 
+
 
 	<% if current_barber %>
 	<%= form_for [@barber,@portfolio,@comment]  do |f| %>

@@ -3,60 +3,66 @@
 	<div id ="main"> <!-- This div holds the content on the barber page -->
 		
 		<div class="profile-head">
-			<h1><%#= image_tag @barber.avatar %></h1>
+			
 			<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
 			<h1><%= @barber.name %></h1>
 			<h2><%= @barber.bio %></h2>
 
 			
 			<ul class="contact-info">
-				<% if @barber == current_barber && { follow: false } %>
-				<%= link_to 'Follow Barber', barber_follow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
-			
-				<% else @barber == current_barber && {follow: true} %>
-				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber, @socializable), method: :post, class: 'btn btn-primary btn-lg' %>
+				
+			<!-- 	
+				<% Follow.where(followable_id: 1).each do |x| %>
+				<%= x.follower_id %>
+				<% end %> -->
+
+
+
+				<% if current_barber == Barber.find(params[:id]) %>
+
+				<%else%>
+				<%= @barber.follows?(current_barber || current_user) %>
+				<% if @barber.follows?(current_barber || current_user) %>
+				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber), method: :post, class: 'btn btn-primary btn-lg' %>
+				<% else @barber.unfollow!(current_barber || current_user) %>
+				<%= link_to 'Follow Barber', barber_follow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
 				<% end %> 
+				<% end %>
+
+				<a href="<%= barber_pages_path(@barber.id) %>">
 				<%= @barber.followers(Barber || Customer).count %><span>follows</span>
+				</a>
+				<a href="<%= pages_following_path %>">
 				<%= @barber.followables(Barber || Customer).count %><span>following</span>
+				</a>
 
 				<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
+
 				<%= mail_to @barber.email do %>
 				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
 				<% end %>
+
 				<li><span class="glyphicon glyphicon-usd"><%= @barber.low_price %>-<%= @barber.high_price %></span></li>
 			</ul>
 		</div> <!-- end of profile-head div -->
 
-		<!-- <div class="container"> --> <!-- This container is actually making our pictures center differently  -->
-		<div class="row">	
-			<% @portfolio.each do |p| %>
 		
-
-			<!-- 	<div id="b-picture"> --> 
-
-			<!-- <div id="overlay"> -->
-			<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
-				<ol>
-					<a class="overlay">		
-						<a href="<%= barber_portfolio_path(@barber, p) %>">
-						<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
-						<p><%= p.title %></br><%= p.description %></p>
-						</a>
-					</a>
-				</div>
+	<div class="row">	
+				<% @portfolio.each do |p| %>
+		<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+			<ol>
+					<a href="<%= barber_portfolio_path(@barber, p) %>">
+					<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
+					</a>	
+					<p><%= p.title %></br><%= p.description %></p>
+					</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
-				</ol>
+			</ol>
+			<%= will_paginate @portfolio %>	
+		</div>
+	</div> <!-- end of row div -->
 
-				<%= will_paginate @portfolio %>	
-			</div>
-		</div> <!-- end of row div -->
-		<!-- </div> --> <!-- end of container div -->
 
-	</div> <!-- end of main div -->
+</div> <!-- end of main div -->
 
 </div> <!-- end of wrapper div -->
-
-<!-- TO GET A COUNT OF HOW MANY TIMES A PICTURE WAS LIKED PUT THIS: -->
-<!-- @portfolios.likes.count  -->
-
-

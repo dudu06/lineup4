@@ -51,7 +51,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li class =""><%= link_to "Find Barbers", barbers_path %></li>
-				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_barber) %></li>
+				<li class =""><%= link_to "Edit Profile", edit_barber_path(current_user) %></li>
 				<li class =""><%= link_to "Logout", session_path(current_user), method: :delete, html:{style:"color: black;"} %></li>
 				<li class =""><%= link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), customer_path(current_user) %></li>
 

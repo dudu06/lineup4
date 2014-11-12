@@ -21,8 +21,6 @@ skip_before_action :verify_authenticity_token
   @barber == [:is_barber]
   end
 
-  def is_followable?
-    true
-  end
+ 
 
 end

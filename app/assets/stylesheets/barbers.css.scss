@@ -291,15 +291,25 @@ ol .dribble-group {
 	float: none;
 }
 
-.profile-head {
 
+/*p underneath the image transitions in with this stuff below*/
+.row #picture-holder p {
+  opacity: 0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-transition: opacity 0.3s ease-out;  
+     -moz-transition: opacity 0.3s ease-out;  
+      -ms-transition: opacity 0.3s ease-out;  
+       -o-transition: opacity 0.3s ease-out;  
+          transition: opacity 0.3s ease-out;  
 }
 
-
-p {
-/*	display: none;*/
-}
-
-#picture-holder, ol, .overlay, a, li, p:hover {
-
+.row #picture-holder p:hover {
+  opacity: 1; 
+  text-decoration: none;
+  padding-right: auto;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: bold;
 }

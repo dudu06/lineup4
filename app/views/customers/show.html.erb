@@ -9,6 +9,12 @@ TEST
 <h1><%= @customer.name %></h1>
 
 <h1><%= image_tag @customer.avatar %></h1>
+				<a href="<%= customer_pages_path(@customer.id) %>">
+				<%= @customer.followers(Barber || Customer).count %><span>follows</span>
+				</a>
+				<a href="<%= pages_following_path(@customer.id) %>">
+				<%= @customer.followables(Barber || Customer).count %><span>following</span>
+				</a>
 
  <%= link_to "Log Out", session_path, method: :delete, class: 'btn btn-primary btn-lg' %></a></p>
 	

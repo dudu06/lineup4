@@ -1,0 +1,31 @@
+
+test
+<% if current_barber %> 
+<% @barber = Barber.find(params[:barber_id]) %>
+<%= @barber.followees(Customer && Barber).each do |f| %>
+<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% end %>
+
+<% else current_user %> 
+<% @customer = Customer.find(params[:customer_id]) %>
+<%= @customer.followees(Customer && Barber).each do |f| %>
+<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

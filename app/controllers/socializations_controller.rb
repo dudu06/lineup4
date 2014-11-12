@@ -1,47 +1,64 @@
 class SocializationsController < ApplicationController
   before_filter :load_socializable
+  # before_filter :load_portfolio
+
+  # def load_portfolio
+  #   @load_portfolio
+  # end
 
   def follow
-    if current_user 
-      current_user.follow!(@socializable) 
-      render json: { follow: true }
+    if current_user
+      @customer = Customer.find(params[:customer_id])  
+      @barber.follow! current_user 
+      redirect_to barber_path(@customer)
     else 
-      current_barber.follow!(@socializable)
-      # render barber_path(@barber)
-      redirect_to follow_barber_path(current_barber)
-      render json: { follow: true}
+      @barber = Barber.find(params[:barber_id])  
+      @barber.follow! current_barber
+      redirect_to barber_path(@barber)
     end
   end
 
   def unfollow
     if current_user 
-      current_user.unfollow!(@socializable)
-      render json: { follow: false }
+      @customer = Customer.find(params[:customer_id]) 
+      @barber.unfollow! current_user
+      redirect_to barber_path(@barber)
     else 
-      current_barber.unfollow!(@socializable)
-      redirect_to unfollow_barber_path(current_barber)
-      render json: { follow: false}
+      @barber = Barber.find(params[:barber_id])  
+      @barber.unfollow! current_barber
+      redirect_to barber_path(@barber)
     end
   end
 
+
   def like
-  if current_user 
+  if current_user
+    @customer = Customer.find(params[:customer_id])
+    @portfolio = Portfolio.find(params[:portfolio_id])
     current_user.like! @portfolio
-    render json: { like: true }
+    redirect_to barber_portfolio_path(@customer, @portfolio)  
   else 
-    current_barber.like!(@portfolio)
-    render json: { like: true }
+    @barber = Barber.find(params[:barber_id])         
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    current_barber.like! @portfolio
+    redirect_to barber_portfolio_path(@barber, @portfolio)  
   end
 end
 
+
 def unlike   
-  if current_user 
-    current_user.unlike!(@socializable) 
-    render json: { unlike: false }
+  if current_user
+    @customer = Customer.find(params[:customer_id])
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    current_user.unlike! @portfolio
+    redirect_to barber_portfolio_path(@customer, @portfolio)  
   else 
-    current_barber.unlike!(@socializable)
-    render json: { unlike: false }
-  end
+    @barber = Barber.find(params[:barber_id])         
+    @portfolio = Portfolio.find(params[:portfolio_id])
+    current_barber.unlike! @portfolio
+    redirect_to barber_portfolio_path(@barber, @portfolio)
+end
+  
 end
 
   

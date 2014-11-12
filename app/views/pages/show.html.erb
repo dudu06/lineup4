@@ -1,0 +1,12 @@
+<% if current_barber %>
+
+<%= current_barber.followers(Customer && Barber).each do |f| %>
+<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% end %>
+
+<% else %>
+<%= current_user.followers(Customer && Barber).each do |f| %>
+<% end %>
+
+<% end %> <!-- end of logic at top -->
+

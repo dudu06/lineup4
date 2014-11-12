@@ -8,8 +8,13 @@ Lineup4::Application.routes.draw do
   get "comments/destroy"
 root 'pages#home'
 
+  get "pages/show"
+  get "pages/following"
+
 resources :barbers do
   resources :portfolios do 
+    post 'like',   to: 'socializations#like'
+    post 'unlike', to: 'socializations#unlike'
   	resources :comments
 	end
 end
@@ -27,6 +32,16 @@ end
 #     post :follow
 #     end
 # end
+
+resources :barbers do 
+  resources :pages do 
+end
+end 
+
+resources :customers do 
+  resources :pages do 
+end
+end 
 
 
 resources :customers do
