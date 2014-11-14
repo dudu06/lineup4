@@ -9,23 +9,35 @@
 <% end %> <br>
 
 
-
-
 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-<% @portfolio.comments.each do |p| %>
-<%= p.customername %>
 </div>
+<% @portfolio.comments.each do |p| %>
 
+<% if current_barber %>
 <strong><%= p.barbername %></strong><%= image_tag current_barber.avatar.url(:thumb), 
-			class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
-<br>
+class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %><br>
+
+<% else current_user %>
+
+<strong><%= p.customername %></strong><%= image_tag current_user.avatar.url(:thumb), 
+class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %><br>
+<% end %>
 <% end %>
 
 
-<% if current_barber.likes?(@portfolio)  %>
+
+<!--  if current_barber.likes?(@portfolio)  -->
+<% if current_barber && current_barber.likes?(@portfolio) %>
 <%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
-<% else %>
+<% elsif %>
 <%= link_to 'Like Picture', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+
+
+<% else current_user && current_user.likes?(@portfolio) %>
+<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<% if %>
+<%= link_to 'Like Picture', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<% end %> 
 
 <% end %>
 
@@ -33,25 +45,25 @@
 <%= @portfolio.likers(Barber || Customer).count %><span>likes</span>
 
 
-	<% if current_barber %>
-	<%= form_for [@barber,@portfolio,@comment]  do |f| %>
-		<div class="col-sm-6 col-sm-offset-3">
-			<div class="form-group">
-			<%= f.hidden_field :barbername, :value => current_barber.name %>
-			<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
-			</div>
-		</div>
+<% if current_barber %>
+<%= form_for [@barber,@portfolio,@comment]  do |f| %>
+<div class="col-sm-6 col-sm-offset-3">
+	<div class="form-group">
+		<%= f.hidden_field :barbername, :value => current_barber.name %>
+		<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
+	</div>
+</div>
 
 
 
-	<% end %>
+<% end %>
 <% else %>
-	<%= form_for [@barber,@portfolio,@comment]  do |f| %>
-		<div class="form-group">
-		<%= f.hidden_field :customername, :value => current_user.name %>
-			<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
-			</div>
-	<% end %>
+<%= form_for [@barber,@portfolio,@comment]  do |f| %>
+<div class="form-group">
+	<%= f.hidden_field :customername, :value => current_user.name %>
+	<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
+</div>
+<% end %>
 <% end %>
 
 

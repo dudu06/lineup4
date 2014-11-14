@@ -8,9 +8,10 @@ class SocializationsController < ApplicationController
 
   def follow
     if current_user
-      @customer = Customer.find(params[:customer_id])  
-      @barber.follow! current_user 
-      redirect_to barber_path(@customer)
+      @barber = Barber.find(params[:barber_id]) 
+      @customer = Customer.find_by(params[:customer_id])  
+      @barber.follow! current_user
+      redirect_to barber_path(@barber)
     else 
       @barber = Barber.find(params[:barber_id])  
       @barber.follow! current_barber
@@ -20,7 +21,8 @@ class SocializationsController < ApplicationController
 
   def unfollow
     if current_user 
-      @customer = Customer.find(params[:customer_id]) 
+      @barber = Barber.find(params[:barber_id]) 
+      @customer = Customer.find_by(params[:customer_id]) 
       @barber.unfollow! current_user
       redirect_to barber_path(@barber)
     else 
@@ -33,10 +35,11 @@ class SocializationsController < ApplicationController
 
   def like
   if current_user
-    @customer = Customer.find(params[:customer_id])
+    @barber = Barber.find(params[:barber_id])      
     @portfolio = Portfolio.find(params[:portfolio_id])
+    @customer = Customer.find_by(params[:customer_id])
     current_user.like! @portfolio
-    redirect_to barber_portfolio_path(@customer, @portfolio)  
+    redirect_to barber_portfolio_path(@barber, @portfolio)  
   else 
     @barber = Barber.find(params[:barber_id])         
     @portfolio = Portfolio.find(params[:portfolio_id])
@@ -48,10 +51,11 @@ end
 
 def unlike   
   if current_user
-    @customer = Customer.find(params[:customer_id])
+    @barber = Barber.find(params[:barber_id])  
     @portfolio = Portfolio.find(params[:portfolio_id])
+    @customer = Customer.find(params[:customer_id])
     current_user.unlike! @portfolio
-    redirect_to barber_portfolio_path(@customer, @portfolio)  
+    redirect_to barber_portfolio_path(@barber, @portfolio)  
   else 
     @barber = Barber.find(params[:barber_id])         
     @portfolio = Portfolio.find(params[:portfolio_id])

@@ -1,20 +1,43 @@
-TEST
+<div class="wrapper"> 
 
 
+	<div id ="customer-main"> <!-- This div holds the content on the customer page -->
 
+		<div class="profile-head">
+			<h1><%= image_tag @customer.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
+			<h1><%= @customer.name %></h1>
+			<h2><%= @customer.bio %></h2>
 
+			<ul class="contact-info">
 
+				<% if current_user == Customer.find(params[:id]) %>
+				<% else %>
+				<%= @customer.follows?(current_barber || current_user) %>
 
+				<% if @barber.follows?(current_barber || current_user) %>
+				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
+				<% else @barber.unfollow!(current_barber || current_user) %>
+				<%= link_to 'Follow Barber', barber_follow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
+				<% end %> 
 
-<h1><%= @customer.name %></h1>
+				<% end %>
 
-<h1><%= image_tag @customer.avatar %></h1>
-				<a href="<%= customer_pages_path(@customer.id) %>">
-				<%= @customer.followers(Barber || Customer).count %><span>follows</span>
+				<a href="<%= barber_pages_path(@customer.id) %>">
+					<%= @customer.followers(Barber || Customer).count %><span>follows</span>
 				</a>
 				<a href="<%= pages_following_path(@customer.id) %>">
-				<%= @customer.followables(Barber || Customer).count %><span>following</span>
+					<%= @customer.followables(Barber || Customer).count %><span>following</span>
 				</a>
 
- <%= link_to "Log Out", session_path, method: :delete, class: 'btn btn-primary btn-lg' %></a></p>
-	
+				<li><span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span></li>
+
+				<%= mail_to @customer.email do %>
+				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
+				<% end %>
+			</ul>
+		</div> <!-- end of profile-head div -->
+
+
+	</div> <!-- end of main div -->
+
+</div> <!-- end of wrapper div -->

@@ -16,25 +16,36 @@
 				<%= x.follower_id %>
 				<% end %> -->
 
-
-
 				<% if current_barber == Barber.find(params[:id]) %>
-
-				<%else%>
+				<% else %>
 				<%= @barber.follows?(current_barber || current_user) %>
+
 				<% if @barber.follows?(current_barber || current_user) %>
-				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber), method: :post, class: 'btn btn-primary btn-lg' %>
+				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
 				<% else @barber.unfollow!(current_barber || current_user) %>
 				<%= link_to 'Follow Barber', barber_follow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
 				<% end %> 
+
 				<% end %>
 
-				<a href="<%= barber_pages_path(@barber.id) %>">
+				<% if current_barber %>
+				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
 				<%= @barber.followers(Barber || Customer).count %><span>follows</span>
 				</a>
-				<a href="<%= pages_following_path %>">
+				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
 				<%= @barber.followables(Barber || Customer).count %><span>following</span>
 				</a>
+
+				<!-- I updated this logic below on 11-13...I think it works, but check back again on 11-15 to make sure -->
+				<% else current_user%>
+				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
+				<%= @barber.followers(Customer).count %><span>follows</span>
+				</a>
+				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
+				<%= @barber.followables(Customer).count %><span>following</span>
+				</a>
+				<% end %>
+
 
 				<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
 

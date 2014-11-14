@@ -19,6 +19,14 @@ resources :barbers do
 	end
 end
 
+resources :customers do
+  resources :portfolios do 
+    post 'like',   to: 'socializations#like'
+    post 'unlike', to: 'socializations#unlike'
+    resources :comments
+  end
+end
+
 # # Added this in for socialization gem to work
 # resources :customers do
 #   member do
@@ -47,6 +55,8 @@ end
 resources :customers do
   post 'follow',   to: 'socializations#follow'
   post 'unfollow', to: 'socializations#unfollow'
+  post 'like',   to: 'socializations#like'
+  post 'unlike', to: 'socializations#unlike'
 end
 
 resources :barbers do
