@@ -131,6 +131,14 @@ p , #search {
 	text-align: center;
 }
 
+.userImage {
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 1em;
+}
+
 /*This centers the main id that holds 
 profile pic, bio, price and gallery*/
 #main , .row {
@@ -143,6 +151,7 @@ li > .glyphicon {
 
 .img-square {
 	width: 300px;
+	height: auto;
 	margin: 0 auto;
 	border: 10px solid white;
 	text-align: center;
@@ -153,7 +162,6 @@ li > .glyphicon {
 	font-weight: bold;
 	font-size: 2em;
 	text-align: center;
-	padding: 1em;
 }
 
 .barberLocation {
