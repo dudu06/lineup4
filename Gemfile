@@ -81,9 +81,11 @@ gem "unicorn"
 # GEM FOR FOLLOWS,LIKES,ETC.
 gem "socialization"
 
+gem 'font-awesome-less'
+
 
 # ÷gem 'acts_as_votable', '~> 0.10.0'
 
 
 # RUBY '2.1.2' IS NEEDED TO GET APP ON HEROKU. FIRST GEM NEEDED
-ruby "2.1.2"
+# ruby "2.1.2"

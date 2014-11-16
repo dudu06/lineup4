@@ -1,56 +1,45 @@
-<h1>Portfolios#show</h1>
+<!-- <h1>Barber Portfolio</h1> -->
+<div class="spacer"></div>
 
-
+<div class="text-center imageport">
 
 <%= image_tag @portfolio.photo(:medium), class: "img-responsive", width: 400 %>
 
-<% if @barber == current_barber %>
-<%= link_to "Edit Picture", edit_barber_portfolio_path, class: 'btn btn-primary btn-lg' %>
-<% end %> <br>
-
-
-<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 </div>
-<% @portfolio.comments.each do |p| %>
+<br /><br />
+<div class="row">
 
-<% if current_barber %>
-<strong><%= p.barbername %></strong><%= image_tag current_barber.avatar.url(:thumb), 
-class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %><br>
-
-<% else current_user %>
-
-<strong><%= p.customername %></strong><%= image_tag current_user.avatar.url(:thumb), 
-class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %><br>
+<div class="text-center">
+<% if @barber == current_barber %>
+<%= link_to "Edit", edit_barber_portfolio_path, class: 'btn btn-primary btn-lg' %>
 <% end %>
-<% end %>
-
-
 
 <!--  if current_barber.likes?(@portfolio)  -->
 <% if current_barber && current_barber.likes?(@portfolio) %>
 <%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 <% elsif %>
-<%= link_to 'Like Picture', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<%= link_to 'Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 
 
 <% else current_user && current_user.likes?(@portfolio) %>
 <%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 <% if %>
-<%= link_to 'Like Picture', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<%= link_to 'Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg glyphicon glyphicon-heart' %>
 <% end %> 
 
 <% end %>
 
 
-<%= @portfolio.likers(Barber || Customer).count %><span>likes</span>
+<%= @portfolio.likers(Barber || Customer).count %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
 
-
+<br /><br />
 <% if current_barber %>
 <%= form_for [@barber,@portfolio,@comment]  do |f| %>
 <div class="col-sm-6 col-sm-offset-3">
 	<div class="form-group">
+
 		<%= f.hidden_field :barbername, :value => current_barber.name %>
-		<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
+		<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>  <br />
 	</div>
 </div>
 
@@ -68,6 +57,36 @@ class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %><br>
 
 
 
+<br />
+<% @portfolio.comments.each do |p| %>
 
+<div class="row comments">
+  <div class="col-xs-3">
 
+<% if current_barber %>
+<%= image_tag current_barber.avatar.url(:thumb), 
+class: "img-circle img-profile", width: 34, height: 34 %>
+<br />
+<strong><%= p.barbername %></strong>
+  </div>
+  <div class="col-xs-9">
+
+<%= p.content %>
+
+</div>
+</div>
+<span class="hrwid">
+<hr />
+</span>
+<br /> 
+
+<% else current_user %>
+
+<strong><%= p.customername %></strong><%= image_tag current_user.avatar.url(:thumb), 
+class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
+<% end %>
+<% end %>
+
+</div>
+</div>
 

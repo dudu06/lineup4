@@ -5,11 +5,11 @@
 		<div class="profile-head">
 			
 			<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
-			<h1><%= @barber.name %></h1>
+			<h1 class="userNameHere"><%= @barber.name %></h1>
 			<h2><%= @barber.bio %></h2>
 
 			
-			<ul class="contact-info">
+			<div class="contact-info">
 				
 			<!-- 	
 				<% Follow.where(followable_id: 1).each do |x| %>
@@ -30,10 +30,10 @@
 
 				<% if current_barber %>
 				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
-				<%= @barber.followers(Barber || Customer).count %><span>follows</span>
-				</a>
+				<%= @barber.followers(Barber || Customer).count %><span> fans</span>
+				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
-				<%= @barber.followables(Barber || Customer).count %><span>following</span>
+				<%= @barber.followables(Barber || Customer).count %><span> following</span>
 				</a>
 
 				<!-- I updated this logic below on 11-13...I think it works, but check back again on 11-15 to make sure -->
@@ -47,18 +47,20 @@
 				<% end %>
 
 
-				<li><span class="glyphicon glyphicon-home"><%= @barber.zipcode %></span></li>
+			<span class="barberLocation"><span class="glyphicon glyphicon-home"></span>&nbsp;<%= @barber.zipcode %></span>
 
-				<%= mail_to @barber.email do %>
-				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
-				<% end %>
+				<span class="contactBarberIcon">
+					<%= mail_to @barber.email do %>
+					<span class="glyphicon glyphicon-envelope"></span> Contact</a>
+					<% end %>
+				</span>
 
-				<li><span class="glyphicon glyphicon-usd"><%= @barber.low_price %>-<%= @barber.high_price %></span></li>
-			</ul>
+				<span class="glyphicon glyphicon-usd"><%= @barber.low_price %>-<%= @barber.high_price %></span>
+			</div>
 		</div> <!-- end of profile-head div -->
 
-		
-	<div class="row">	
+
+<div class="row">	
 				<% @portfolio.each do |p| %>
 		<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
 			<ol>

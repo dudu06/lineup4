@@ -57,9 +57,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    commonjs (0.2.7)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.2.1)
+    font-awesome-less (4.2.0)
+      less (~> 2.4.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (1.5.3)
@@ -70,6 +73,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     kgio (2.9.2)
+    less (2.4.0)
+      commonjs (~> 0.2.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -169,6 +174,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
+  font-awesome-less
   jbuilder (~> 1.2)
   jquery-rails
   paperclip

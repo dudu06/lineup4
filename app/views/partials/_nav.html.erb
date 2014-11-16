@@ -16,10 +16,13 @@
 		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
 		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
 		      </a>
+		  <ul class="nav navbar-nav navbar-left">
+				<%= link_to (image_tag "logo-logo.png", size: "12x50", class: "text-center logo"), barber_path(current_barber) %>
+			</ul>
 			</div>
 
+
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<a class="navbar-brand"><%= link_to (image_tag "logo-logo.png", size: "12x50", class: "text-center logo"), barber_path(current_barber) %>
 			<ul class="nav navbar-nav navbar-right">
 				<li class =""><%= link_to "Find Barbers", barbers_path %></li>
 				<li class =""><%= link_to "New Picture", new_barber_portfolio_path(current_barber) %></li>
