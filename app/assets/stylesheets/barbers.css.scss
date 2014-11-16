@@ -15,11 +15,23 @@
     border-radius: 50%;
 }
 
+.mylogo {
+	width: 150px;
+	margin: 0 auto;
+	height: auto;
+}
+
 .page-divider {
 	border-style: line;
 	border-width: 5px;
 	color: gray;
 	width: 300px;
+}
+
+.mylogo {
+	width: 150px;
+	margin: 0 auto;
+	height: auto;
 }
 
 body {
@@ -223,10 +235,10 @@ GALLERY
 .img-responsive {
 	padding: 15px;
 	margin: 0 auto;
-	border: 1px;
-	border-color: white;
+	border: 3px;
+	border-color: #F5F5F5;
 	border-style: solid;
-	background-color: white;
+	background-color: #F5F5F5;
     /*Added in for hover effect below*/
   opacity: 1;
   transition: opacity .40s ease-in-out;
@@ -238,7 +250,7 @@ GALLERY
 .img-responsive:hover {
 	border: 3px;
 	border-style: solid;
-	border-color: white;
+	border-color: #F5F5F5;
 	opacity: 0.55;
 	transition: opacity .40s ease-in-out;
 	-webkit-transition: opacity .40s ease-in-out;
