@@ -60,27 +60,14 @@
 		</div> <!-- end of profile-head div -->
 
 
-	<div class="row">	
+<div class="row">	
 				<% @portfolio.each do |p| %>
-						<div class="spacey"></div>
 		<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
 			<ol>
 					<a href="<%= barber_portfolio_path(@barber, p) %>">
-					<li>
-						<div class="barberImages">
-							<%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %>
-							<span class="textOverlay">
-								<div class="innerTxt">
-<!-- 									<span class="glyphicon glyphicon-user">
-									</span> -->
-								</div>
-							</span>
-						</div>
-
-					</li>
-
+					<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
 					</a>	
-					<p><%#= p.title %></br><%#= p.description %></p>
+					<p><%= p.title %></br><%= p.description %></p>
 					</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
 			</ol>
