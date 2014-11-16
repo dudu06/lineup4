@@ -1,5 +1,5 @@
-<% if current_barber %>
 
+<% if current_barber %>
 <%= current_barber.followers(Customer && Barber).each do |f| %>
 <%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
 <% end %>

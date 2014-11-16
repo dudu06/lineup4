@@ -1,4 +1,4 @@
-
+<h1>PEOPLE YOU FOLLOW</h1>
 <% if current_barber %>
 
 <%= current_barber.followees(Customer && Barber).each do |f| %>
@@ -6,7 +6,7 @@
 <% end %>
 
 <% else current_user %> 
-<%= current_user.followees(Customer && Barber).each do |f| %>
+<% current_user.followees(Customer && Barber).each do |f| %>
 <%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
 <!-- This page works for customers except there is a dot in the url -->
 <% end %>
