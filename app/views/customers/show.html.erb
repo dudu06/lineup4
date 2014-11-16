@@ -8,7 +8,7 @@
 			<h1><%= @customer.name %></h1>
 			<h2><%= @customer.bio %></h2>
 
-			<ul class="contact-info">
+			<div class="contact-info">
 
 				<% if current_user == Customer.find(params[:id]) %>
 				<% else %>
@@ -29,12 +29,12 @@
 					<%= @customer.followables(Barber || Customer).count %><span>following</span>
 				</a>
 
-				<li><span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span></li>
+				<span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span>
 
 				<%= mail_to @customer.email do %>
-				<li><span class="glyphicon glyphicon-envelope"></span></a></li>
+				<span class="glyphicon glyphicon-envelope"></span></a>
 				<% end %>
-			</ul>
+			</div>
 		</div> <!-- end of profile-head div -->
 
 
