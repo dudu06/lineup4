@@ -227,7 +227,7 @@ GALLERY
 	border-color: white;
 	border-style: solid;
 	background-color: white;
-  /*Added in for hover effect below*/
+    /*Added in for hover effect below*/
   opacity: 1;
   transition: opacity .40s ease-in-out;
   -webkit-transition: opacity .40s ease-in-out;
@@ -236,7 +236,7 @@ GALLERY
 }
 
 .img-responsive:hover {
-	border: 1px;
+	border: 3px;
 	border-style: solid;
 	border-color: white;
 	opacity: 0.55;
