@@ -81,7 +81,18 @@ class: "img-circle img-profile", width: 34, height: 34 %>
 <br /> 
 
 <% else current_user %>
-
+<<<<<<< HEAD
+<div class="row comments">
+  <div class="col-xs-3">
+=======
+>>>>>>> new
+<%= image_tag current_user.avatar.url(:thumb), 
+class: "img-circle img-profile", width: 34, height: 34 %>
+<br />
+<strong><%= p.customername %></strong>
+  </div>
+  <div class="col-xs-9">
+<<<<<<< HEAD
 <%= p.content %>
 </div>
 </div>
@@ -91,7 +102,10 @@ class: "img-circle img-profile", width: 34, height: 34 %>
 <br /> 
 <% end %>
 <% end %>
+=======
 
+<%= p.content %>
+>>>>>>> new
 
 </div>
 </div>

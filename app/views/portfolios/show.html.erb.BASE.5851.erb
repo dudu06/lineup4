@@ -1,12 +1,12 @@
 <!-- <h1>Barber Portfolio</h1> -->
-<div class="spacey"></div>
+<div class="spacer"></div>
 
 <div class="text-center imageport">
 
 <%= image_tag @portfolio.photo(:medium), class: "img-responsive", width: 400 %>
 
 </div>
-<br />
+<br /><br />
 <div class="row">
 
 <div class="text-center">
@@ -48,14 +48,15 @@
 <% end %>
 <% else %>
 <%= form_for [@barber,@portfolio,@comment]  do |f| %>
-<div class="col-sm-6 col-sm-offset-3">
 <div class="form-group">
 	<%= f.hidden_field :customername, :value => current_user.name %>
 	<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>
 </div>
-</div>
 <% end %>
 <% end %>
+
+
+
 <br />
 <% @portfolio.comments.each do |p| %>
 
@@ -63,7 +64,6 @@
   <div class="col-xs-3">
 
 <% if current_barber %>
-
 <%= image_tag current_barber.avatar.url(:thumb), 
 class: "img-circle img-profile", width: 34, height: 34 %>
 <br />
@@ -82,26 +82,11 @@ class: "img-circle img-profile", width: 34, height: 34 %>
 
 <% else current_user %>
 
-<%= p.content %>
-</div>
-</div>
-<span class="hrwid">
-<hr />
-</span>
-<br /> 
+<strong><%= p.customername %></strong><%= image_tag current_user.avatar.url(:thumb), 
+class: "img-circle img-profile", width: 34, height: 34 %><%= p.content %>
 <% end %>
 <% end %>
 
-
 </div>
 </div>
-<span class="hrwid">
-<hr />
-</span>
-<br /> 
-
-<% end %>
-<% end %>
-
-
 
