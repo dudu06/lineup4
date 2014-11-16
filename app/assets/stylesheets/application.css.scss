@@ -24,7 +24,39 @@ Home Page once logged in
 ****************************/
 
 .btn-info {
-	background-color: #4388C3;
+	background-color: #A82008;
+	border: none;
+	font-weight: 100;
+	transition: opacity .40s ease-in-out;
+    -webkit-transition: opacity .40s ease-in-out;
+    -moz-transition: opacity .40s ease-in-out;
+    -o-transition: opacity .40s ease-in-out;
+}
+
+.btn-primary {
+	background-color: #A82008;
+	font-weight: 100;
+	border: none;
+}
+
+body {
+	background-color: white !important;
+}
+
+.inputsmy {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: -2.4em;
+}
+
+.btn-info:hover {
+	background-color: #E82C0C;
+	border: none;
+	font-weight: 100;
+	transition: opacity .40s ease-in-out;
+    -webkit-transition: opacity .40s ease-in-out;
+    -moz-transition: opacity .40s ease-in-out;
+    -o-transition: opacity .40s ease-in-out;
 }
 
 
@@ -35,6 +67,10 @@ Home Page once logged in
 
 .navbar-right a, .img-profile {
 	text-align: center;
+}
+
+.navbar-default {
+	border: none;
 }
 
 .container-fluid , #bs-example-navbar-collapse-1 {
