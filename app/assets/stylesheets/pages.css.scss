@@ -12,6 +12,9 @@ Root Page
 	padding-top: 10px;
 }
 
+.fresh {
+  color: white;
+}
 
 .header {
 	background-image: url('background2.png');
@@ -20,8 +23,82 @@ Root Page
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 710px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
     margin-top: -23px;
+    bottom: 0 !important;
+}
+
+.loginbtn {
+  z-index: 100000;
+  background-color: transparent;
+  font-weight: 400;
+  padding: 0 2.4em 0 2.4em;
+  border-radius: 5px;
+  margin-top: .5em;
+  color: white !important;
+  width: 100px;
+  text-align: center;
+  opacity: .8;
+    transition: opacity .20s ease-in-out;
+    -webkit-transition: opacity .20s ease-in-out;
+    -moz-transition: opacity .20s ease-in-out;
+    -o-transition: opacity .20s ease-in-out;
+}
+
+.btn-wide {
+  width: 100px;
+  transition: .20s ease-in-out;
+  -webkit-transition:.20s ease-in-out;
+  -moz-transition:.20s ease-in-out;
+  -o-transition:.20s ease-in-out;
+}
+
+.imageic {
+  font-size: 10em;
+  margin-bottom: .3em;
+}
+
+.imageict {
+  font-size: 7em;
+  margin-bottom: .3em;
+}
+
+.btn-wide:hover {
+  background-color: #F5271C;
+    transition: .20s ease-in-out;
+    -webkit-transition:.20s ease-in-out;
+    -moz-transition:.20s ease-in-out;
+    -o-transition:.20s ease-in-out;
+}
+
+.btn-wider {
+  width: 200px;
+  transition: .20s ease-in-out;
+  -webkit-transition:.20s ease-in-out;
+  -moz-transition:.20s ease-in-out;
+  -o-transition:.20s ease-in-out;
+}
+
+.btn-wider:hover {
+  background-color: #F5271C;
+    transition: .20s ease-in-out;
+    -webkit-transition:.20s ease-in-out;
+    -moz-transition:.20s ease-in-out;
+    -o-transition:.20s ease-in-out;
+}
+
+.loginbtn:hover {
+  opacity: 1;
+    transition: opacity .20s ease-in-out;
+    -webkit-transition: opacity .20s ease-in-out;
+    -moz-transition: opacity .20s ease-in-out;
+    -o-transition: opacity .20s ease-in-out;
+}
+
+.fontwhite {
+  color: white !important;
 }
 
 .barber_button {

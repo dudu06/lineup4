@@ -36,6 +36,8 @@
 
 body {
 	background-color: white !important;
+	height: 100%;
+	width: 100%;
 }
 
 .inputsmy {
@@ -46,6 +48,10 @@ body {
 
 .navbar-default {
 	border: none;
+}
+
+.mynav {
+	background-color: transparent;
 }
 
 /****************************
