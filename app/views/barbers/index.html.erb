@@ -12,13 +12,13 @@ $(function() {
 </script>
 
 <div class="find-barber">
-<h1>Enter Your Zipcode and <br>Find a Barber</h1>
+<h1>Find a Barber</h1>
 </div>
 
 
 <%= form_tag barbers_path, :method => 'get', :id => "barbers_search" do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search], :placeholder => "Enter Your Zipcode Here" %>
     <%#= submit_tag "Search" %>
   </p>
  

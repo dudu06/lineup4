@@ -10,14 +10,19 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";
 @import 'bootstrap';
+@import "font-awesome";
 
 /* IN ORDER FOR BOOTSTRAP TO WORK YOU MUST ADD .SCSS AT THE END OF THE FILE NAME.*/
 
-
+.navbar-nav > li > a {
+	padding-top: 17px;
+	padding-bottom: 8px;
+}
 
 /****************************
 Home Page once logged in
@@ -27,6 +32,15 @@ Home Page once logged in
 	background-color: #4388C3;
 }
 
+.glyphicon-lock, .glyphicon-usd, .glyphicon-user {
+	font-size: .85em;
+}
+
+.fa-user {
+	color: black;
+	font-size: 2em;
+	z-index: 10000000;
+}
 
 .logo {
 	margin: auto;
@@ -41,16 +55,20 @@ Home Page once logged in
 	max-height: 400px;
 }
 
+.img-circle {
+	margin-top: -9px;
+}
+
 /*This is the search bar on the barbers index page*/
 p , #search {
 	padding-top: 2%;
+	width: 200px;
 	margin: 0 auto;
-	max-width: 200px;
 }
 
 /*This is the instruction on barber index*/
 .find-barber h1 {
-	margin-left: 0 auto;
+	text-align: center;
 }
 
 /*This centers the main id that holds 
@@ -63,6 +81,82 @@ li > .glyphicon {
 	margin: 5%;
 }
 
+.img-square {
+	width: 300px;
+	margin: 0 auto;
+	border: 10px solid white;
+	text-align: center;
+}
+
+
+.barberName {
+	font-weight: bold;
+	font-size: 2em;
+	text-align: center;
+	padding: 1em;
+}
+
+.barberLocation {
+	padding: 0 1em 0 1em;
+}
+
+.contactBarberIcon {
+	padding: 0 1em 0 1em;
+}
+
+.spacer {
+	height: 4em;
+}
+
+.spacey {
+	height: 2em;
+}
+
+.input-group {
+	padding-bottom: .3em;
+}
+
+.edit {
+	width: 360px;
+	margin: 0 auto;
+}
+
+.barberImages {
+	overflow: hidden;
+	width: 400px;
+	margin: 0 auto;
+}
+
+.imageport {
+	width: 400px;
+	margin: 0 auto;
+	height: auto;
+	min-height: 400px;
+}
+
+hr {
+	width: 400px;
+	margin: .3em auto;
+	border-color: #cfcfcf;
+}
+
+.comments {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.textOverlay {
+	width: auto;
+	position: absolute;
+	padding-right: 8.5em;
+	color: black;
+	text-align: center;
+	opacity: 0;
+}
+
+.textOverlay:hover {
+	opacity: 1;
+}
 
 
 /****************************
