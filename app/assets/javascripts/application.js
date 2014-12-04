@@ -12,9 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require_tree .
 
-
+;(function() {
+  $(document).ready(function() {
+    var $img       = $("img")
+      , img_holder = "http://placehold.it/150x150&text=LineUp";
+    
+    $("img").each(function() {
+      $(this).error(function() {
+        $("img").unbind("error").attr("src", img_holder);
+      });
+    });
+  });
+}());
