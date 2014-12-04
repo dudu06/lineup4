@@ -14,11 +14,11 @@
 				<% else %>
 				<%= @customer.follows?(current_barber || current_user) %>
 
-				<% if @barber.follows?(current_barber || current_user) %>
-				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
-				<% else @barber.unfollow!(current_barber || current_user) %>
-				<%= link_to 'Follow Barber', barber_follow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
-				<% end %> 
+				<%# if @barber.follows?(current_barber || current_user) %>
+				<%#= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
+				<%# else @barber.unfollow!(current_barber || current_user) %>
+				<%#= link_to 'Follow Barber', barber_follow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
+				<%# end %> 
 
 				<% end %>
 

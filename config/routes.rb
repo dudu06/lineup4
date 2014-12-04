@@ -27,6 +27,11 @@ resources :customers do
   end
 end
 
+match '/barbers/:id/followers', to: 'barbers#followers', as: :barber_followers, via: :get
+match '/barbers/:id/following', to: 'barbers#following', as: :barber_following, via: :get
+match '/customers/:id/followers', to: 'customers#followers', as: :customer_followers, via: :get
+match '/customers/:id/following', to: 'customers#following', as: :customer_following, via: :get
+
 # # Added this in for socialization gem to work
 # resources :customers do
 #   member do

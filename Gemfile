@@ -10,10 +10,6 @@ gem 'pg'
 # IF THAT DID NOT WORK BE SURE TO CHANGE YOUR APP.CSS FILE TO A APP.CSS.SCSS
 gem 'bootstrap-sass', '~> 3.2.0'
 
-gem 'turbolinks'
-
-
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

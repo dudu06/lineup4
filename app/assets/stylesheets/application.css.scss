@@ -242,3 +242,20 @@ hr {
 FOR LIKES ON PICTURES
 ****************************/
 
+// You can delete this - Jared
+body {
+	position: relative;
+	min-height: 150vh;
+}
+ul.delete-this-class {
+  width: 300px;
+  margin: 10px auto;
+}
+div.footer.delete-this-class {
+	background-color: lightgrey;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-top: 100px;
+}

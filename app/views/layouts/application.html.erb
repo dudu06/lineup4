@@ -2,19 +2,29 @@
 <html>
 <head>
   <title>Lineup4</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<% if current_barber || current_user %>
-<%= render 'partials/nav' %>
-<% else %>
-<%= render 'partials/nav' %>
-<% end %>
+  <body>
+    <% if current_barber || current_user %>
+      <%= render 'partials/nav' %>
+    <% else %>
+      <%= render 'partials/nav' %>
+    <% end %>
 
+    <%= yield %>
 
-<%= yield %>
-
-</body>
+    <div class="footer delete-this-class"> 
+      <%= debug(params) %>
+      <h3>New Links added</h3>
+      <ul>
+        <li>Barber Links: barber_following_path(@barber)</li>
+        <li>Barber Links: barber_followers_path(@barber)</li>
+        <li>Customer Links: customer_following_path(@customer)</li>
+        <li>Customer Links: customer_following_path(@customer)</li>
+      </ul>
+      <h5>Delete me in /layouts/application.html.erb</h5>
+    </div>
+  </body>
 </html>
