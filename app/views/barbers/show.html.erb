@@ -51,6 +51,11 @@
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
 				<%= @barber.followers(Customer || Barber).count %>&nbsp;<span>following</span>
 				</a>
+
+				 <%= get_fans(@barber || @customer) %>&nbsp;<span>new fans</span>
+
+				 <%= get_follows(@barber || @customer) %>&nbsp;<span>new following</span>
+
 				<% end %>
 
 

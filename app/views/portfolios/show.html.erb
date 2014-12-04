@@ -20,7 +20,7 @@
 <% if ( (current_barber && current_barber.likes?(@portfolio)) || (current_user && current_user.likes?(@portfolio)) ) %>
 	<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 <% else %>
-	<%= link_to 'First Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+	<%= link_to 'Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 <% end %>
 
 
@@ -34,8 +34,12 @@
 <!-- ============================= -->
 <!-- ============================= -->
 <!-- I changed this to get_likes(object) just pass it the object and it'll return the count of both barbers and customers -->
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <% if current_user %>
+  <%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+<% end %>
+
+<% if current_barber %>
   <%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
 <% end %>
 

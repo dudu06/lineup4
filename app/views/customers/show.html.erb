@@ -30,6 +30,9 @@
 					<%= @customer.followers(Barber || Customer).count %>&nbsp;<span>following</span>
 				</a>
 
+				 <%= get_fans(@barber || @customer) %>&nbsp;<span>new admirers</span>
+				 <%= get_follows(@barber || @customer) %>&nbsp;<span>new following</span>
+
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span>
 
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= mail_to @customer.email do %>
