@@ -30,17 +30,17 @@
 <!-- If I use the else we currently have, it counts the barber's like, but not the customer's like -->
 
 <!-- In the console, Customer && Barber only finds the Barber that likes that picture. Customer || Barber only finds the Customer that likes the picture. -->
-<%# if current_barber %>
-	<!-- <%#= @portfolio.likers(Customer && Barber).count %>&nbsp;<span class="glyphicon glyphicon-heart"></span> -->
-<%# else %>
 
+<!-- ============================= -->
+<!-- ============================= -->
 <!-- I changed this to get_likes(object) just pass it the object and it'll return the count of both barbers and customers -->
 
 <% if current_user %>
-	<%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+  <%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
 <% end %>
 
-
+<!-- ============================= -->
+<!-- ============================= -->
 
 <br /><br />
 <% if current_barber %>
