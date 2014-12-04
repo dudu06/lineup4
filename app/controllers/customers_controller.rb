@@ -26,7 +26,6 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
-
   end
 
   def update
@@ -36,6 +35,14 @@ class CustomersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def followers
+    @customer = Customer.find(params[:id])
+  end 
+
+  def following
+    @customer = Customer.find(params[:id])
   end
 
   def customer_params

@@ -1,0 +1,14 @@
+<h1>Link to this barbers followers and following pages</h1>
+<ul class="delete-this-class list-inline">
+  <li><%= link_to @barber.name.titleize + "\sfollowers", barber_followers_path(@barber) %></li>
+  <li><%= link_to @barber.name.titleize + "\sfollowing", barber_following_path(@barber) %></li>
+</ul>
+
+<br>
+
+<br>
+
+<h1>Show all people this barber is following</h1>
+<% get_barber_following(@barber).each do |gbf| %>
+  <%= gbf.inspect %>
+<% end %>

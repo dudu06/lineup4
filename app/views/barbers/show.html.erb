@@ -10,11 +10,10 @@
 
 			
 			<div class="contact-info">
-				
-			<!-- 	
-				<% Follow.where(followable_id: 1).each do |x| %>
-				<%= x.follower_id %>
-				<% end %> -->
+					
+				<%# Follow.where(followable_id: 1).each do |x| %>
+				<%#= x.follower_id %>
+				<%# end %>
 
 				<% if current_barber == Barber.find(params[:id]) %>
 				<% else %>

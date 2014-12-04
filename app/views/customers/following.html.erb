@@ -1,0 +1,14 @@
+<h1>Link to this customers followers and following pages</h1>
+<ul class="delete-this-class list-inline">
+  <li><%= link_to @customer.name.titleize + "\sfollowers", customer_followers_path(@customer) %></li>
+  <li><%= link_to @customer.name.titleize + "\sfollowing", customer_following_path(@customer) %></li>
+</ul>
+
+<br>
+
+<br>
+
+<h1>Show all people this customer is following</h1>
+<% get_customer_followers(@customer).each do |gbf| %>
+  <%= gbf.inspect %>
+<% end %>

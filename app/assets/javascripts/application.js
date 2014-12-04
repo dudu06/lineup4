@@ -21,9 +21,9 @@
     var $img       = $("img")
       , img_holder = "http://placehold.it/150x150&text=LineUp";
     
-    $("img").each(function() {
-      $(this).error(function() {
-        $("img").unbind("error").attr("src", img_holder);
+    $img.each(function() {
+      $img.error(function() {
+        $(this).unbind("error").attr("src", img_holder);
       });
     });
   });
