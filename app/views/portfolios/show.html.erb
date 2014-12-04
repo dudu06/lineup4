@@ -10,27 +10,36 @@
 <div class="row">
 
 <div class="text-center">
+
 <% if @barber == current_barber %>
 <%= link_to "Edit", edit_barber_portfolio_path, class: 'btn btn-primary btn-lg' %>
 <% end %>
 
-<!--  if current_barber.likes?(@portfolio)  -->
-<% if current_barber && current_barber.likes?(@portfolio) %>
-<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
-<% elsif %>
-<%= link_to 'Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 
-
-<% else current_user && current_user.likes?(@portfolio) %>
-<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
-<% if %>
-<%= link_to 'Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg glyphicon glyphicon-heart' %>
-<% end %> 
-
+<!--  Check to see if we are logged in before seeing if we like the @portfolio to prevent errors! -->
+<% if ( (current_barber && current_barber.likes?(@portfolio)) || (current_user && current_user.likes?(@portfolio)) ) %>
+	<%= link_to 'Unlike Picture', barber_portfolio_unlike_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
+<% else %>
+	<%= link_to 'First Like', barber_portfolio_like_path(@barber, @portfolio), method: :post, class: 'btn btn-primary btn-lg' %>
 <% end %>
 
 
-<%= @portfolio.likers(Barber || Customer).count %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+
+<!-- We had an end after the first if for the current barber. And an end after the current user's if. That worked. We also passed in a Barber only if your the current barber. And passed in a Customer if your the current_user. That worked. For now I'm putting an else. For some reason, if your a customer or barber, you can like the picture. Great! But if both a customer and barber like the same picture, that doesn't increment the count to 2. It will stay at 1. That's a problem. They both liked the same picture so it should say 2. -->
+
+<!-- If I use the else we currently have, it counts the barber's like, but not the customer's like -->
+
+<!-- In the console, Customer && Barber only finds the Barber that likes that picture. Customer || Barber only finds the Customer that likes the picture. -->
+<% if current_barber %>
+	<%= @portfolio.likers(Customer && Barber).count %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+<% else %>
+
+<% if current_user %>
+	<%= @portfolio.likers(Customer && Barber).count %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
+<% end %>
+<% end %>
+
+
 
 <br /><br />
 <% if current_barber %>
@@ -97,8 +106,11 @@ class: "img-circle img-profile", width: 34, height: 34 %>
 </span>
 <br /> 
 
+
 <% end %>
 <% end %>
+
+<!-- The other problem is that if other people commented on the same picture it wont show all the comments. It just shows the comments for the current user who is logged in. -->
 
 
 

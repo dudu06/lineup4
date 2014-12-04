@@ -1,19 +1,42 @@
-
-test
+<!-- DO NOT CHANGE FOLLOWABLES WORD. IT WORKS WHEN YOU FOLLOW AS A BARBER -->
+<!-- BUT WHEN I'M A CUSTOMER LOOKING THROUGH OTHER BARBER'S FANS SHIT IS SCREWED -->
+<!-- test wooo -->
+<h1>Fans</h1></br></br>
+<div class="fansPage">
 <% if current_barber %> 
 <% @barber = Barber.find(params[:barber_id]) %>
-<%= @barber.followees(Customer && Barber).each do |f| %>
-<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% @barber.followables(Barber || Customer).each do |f| %>
+<%= link_to (image_tag f.avatar(:thumb), class: "img-circle img-profile", width: 120, height: 120), barber_path(f) %>&nbsp;&nbsp;<h6><%= f.name %></h6></br></br>
 <% end %>
 
-<% else current_user %> 
+
+
+<% else %> 
+<% if current_user %>
 <% @customer = Customer.find_by(params[:id]) %>
-<%= @customer.followees(Customer && Barber).each do |f| %>
-<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% @customer.followables(Barber || Customer).each do |f| %>
+<%= link_to (image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 120, height: 120), barber_path(f) %>&nbsp;&nbsp;<%= f.name %></br></br>
 <% end %>
 
+<!-- **PROBLEM: Shows that I admire my self as a customer -->
 
 <% end %>
+
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+<!-- 
+This should display all the barber's followers 
+barber.followers(User) -->
+
+
 
 
 

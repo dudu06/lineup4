@@ -27,22 +27,29 @@
 				<% end %> 
 
 				<% end %>
+<!-- When a customer follows a barber it shows up in the console that the follow is false. Probably based on the current code above. -->
 
+
+
+				<!-- This is for the barbers count below, both if and else -->
 				<% if current_barber %>
 				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
-				<%= @barber.followers(Barber || Customer).count %><span> fans</span>
+					<!-- Displays how many fans barber has -->
+				<%= @barber.followables(Barber || Customer).count %><span> fans</span>
 				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
-				<%= @barber.followables(Barber || Customer).count %><span> following</span>
+					<!-- Displays how many people barber is following -->
+				<%= @barber.followers(Barber || Customer).count %><span> following</span>
 				</a>
+				<% end %>
 
 				<!-- I updated this logic below on 11-13...I think it works, but check back again on 11-15 to make sure -->
-				<% else current_user%>
+				<% if current_user %>
 				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
-				<%= @barber.followers(Customer).count %><span>follows</span>
-				</a>
+				<%= @barber.followables(Customer || Barber).count %>&nbsp;<span>fans</span>
+				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
-				<%= @barber.followables(Customer).count %><span>following</span>
+				<%= @barber.followers(Customer || Barber).count %>&nbsp;<span>following</span>
 				</a>
 				<% end %>
 

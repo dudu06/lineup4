@@ -22,7 +22,6 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-
     @barber = Barber.find(params[:barber_id])
     @portfolio = Portfolio.find(params[:id])
     @comment = Comment.new   
@@ -33,18 +32,7 @@ class PortfoliosController < ApplicationController
      @barber = Barber.find(params[:barber_id])
   end
 
-  def upvote
-    @portfolio = Portfolio.find(params[:id])
-    current_user.create_activity(@portfolio, 'liked')
-    current_barber.create_activity(@portfolio, 'liked')
-    @portfolio.liked_by current_user
-    @portfolio.liked_by current_barber
-    # redirect_to :back
-    respond_to do |format|
-      format.html {redirect_to portfolios_path }
-      format.json { render json: @status, include: [:get_upvotes, :portfolios] }
-    end
-  end
+
 
   def update
    @portfolio = Portfolio.find(params[:id])
@@ -60,16 +48,6 @@ class PortfoliosController < ApplicationController
    @portfolio = Portfolio.find(params[:id])
    @portfolio.destroy
    redirect_to barber_path(current_barber)
-  end
-
-# THIS LIKE IS USED FOR SOCIALIZATIONS
-  def like
-    if @portfolio.liked_by current_user
-    redirect_to barber_path(@customer)
-    else
-      @portfolio.liked_by current_barber
-    redirect_to barber_path(@barber)
-    end 
   end
 
   def portfolio_params

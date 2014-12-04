@@ -22,16 +22,17 @@
 
 				<% end %>
 
+
 				<a href="<%= barber_pages_path(@customer.id) %>">
-					<%= @customer.followers(Barber || Customer).count %><span>follows</span>
-				</a>
+					<%= @customer.followables(Barber || Customer).count %>&nbsp;<span>admirers</span>
+				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@customer.id) %>">
-					<%= @customer.followables(Barber || Customer).count %><span>following</span>
+					<%= @customer.followers(Barber || Customer).count %>&nbsp;<span>following</span>
 				</a>
 
-				<span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span>
 
-				<%= mail_to @customer.email do %>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= mail_to @customer.email do %>
 				<span class="glyphicon glyphicon-envelope"></span></a>
 				<% end %>
 			</div>

@@ -1,17 +1,20 @@
-
+<!-- FOLLOWERS WORKS ON THE CURRENT BARBER. DO NOT CHANGE -->
 <% if current_barber %>
 
-<%= current_barber.followees(Customer && Barber).each do |f| %>
-<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+<% current_barber.followers(Customer && Barber).each do |f| %>
+<%= link_to (image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 120, height: 120), barber_path(f) %>&nbsp;&nbsp;<%= f.name %></br></br>
 <% end %>
+<!-- ***PROBLEM: If I go to another barber's page to see who they follow, that barber shows up that they follow themselves -->
 
 <% else current_user %> 
-<%= current_user.followees(Customer && Barber).each do |f| %>
-<%= f.name %><%= image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 34, height: 34 %>
+
+<% current_user.followers(Customer && Barber).each do |f| %>
+<%= link_to (image_tag f.avatar.url(:thumb), class: "img-circle img-profile", width: 120, height: 120), barber_path(f) %>&nbsp;&nbsp;<%= f.name %></br></br>
+<!-- FOLLOWERS WORKS ON THE CURRENT USER. DO NOT CHANGE -->
 <!-- This page works for customers except there is a dot in the url -->
 <% end %>
 
 <% end %>
 
 
-
+<!-- This page shows people following a current user or barber -->

@@ -37,8 +37,9 @@ class SocializationsController < ApplicationController
   if current_user
     @barber = Barber.find(params[:barber_id])      
     @portfolio = Portfolio.find(params[:portfolio_id])
-    @customer = Customer.find_by(params[:customer_id])
+    # @customer = Customer.find_by(params[:customer_id])
     current_user.like! @portfolio
+    # binding.pry
     redirect_to barber_portfolio_path(@barber, @portfolio)  
   else 
     @barber = Barber.find(params[:barber_id])         
@@ -53,7 +54,7 @@ def unlike
   if current_user
     @barber = Barber.find(params[:barber_id])  
     @portfolio = Portfolio.find(params[:portfolio_id])
-    @customer = Customer.find(params[:customer_id])
+    # @customer = Customer.find_by(params[:customer_id])
     current_user.unlike! @portfolio
     redirect_to barber_portfolio_path(@barber, @portfolio)  
   else 
