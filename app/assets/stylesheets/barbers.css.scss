@@ -307,23 +307,35 @@ ol .dribble-group {
 
 
 /*p underneath the image transitions in with this stuff below*/
-.row #picture-holder p {
-  opacity: 0;
+.row #picture-holder h5 {
+ /* opacity: 0;*/
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.3em;
+  color: black;
   font-weight: bold;
-  -webkit-transition: opacity 0.3s ease-out;  
+  text-align: center;
+  margin-bottom: -8px;
+/*  -webkit-transition: opacity 0.3s ease-out;  
      -moz-transition: opacity 0.3s ease-out;  
       -ms-transition: opacity 0.3s ease-out;  
        -o-transition: opacity 0.3s ease-out;  
-          transition: opacity 0.3s ease-out;  
+          transition: opacity 0.3s ease-out; */ 
 }
 
-.row #picture-holder p:hover {
+.row #picture-holder p {
+  text-decoration: none;
+  font-size: 12px;
+  color: #747273;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/*.row #picture-holder h5:hover {
   opacity: 1; 
   text-decoration: none;
   padding-right: auto;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: bold;
-}
+}*/

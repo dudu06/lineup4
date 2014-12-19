@@ -10,15 +10,14 @@
 
 			
 			<div class="contact-info">
-				
-			<!-- 	
-				<% Follow.where(followable_id: 1).each do |x| %>
-				<%= x.follower_id %>
-				<% end %> -->
+					
+				<%# Follow.where(followable_id: 1).each do |x| %>
+				<%#= x.follower_id %>
+				<%# end %>
 
 				<% if current_barber == Barber.find(params[:id]) %>
 				<% else %>
-				<%= @barber.follows?(current_barber || current_user) %>
+			<!-- 	<%= @barber.follows?(current_barber || current_user) %> THIS SHOWS TRUE OR FALSE-->
 
 				<% if @barber.follows?(current_barber || current_user) %>
 				<%= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
@@ -79,7 +78,7 @@
 					<a href="<%= barber_portfolio_path(@barber, p) %>">
 					<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
 					</a>	
-					<p><%= p.title %></br><%= p.description %></p>
+					<h5><%= p.title %></h5><p><%= p.description %></p>
 					</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
 			</ol>

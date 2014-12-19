@@ -1,7 +1,5 @@
 
 <% if current_barber %> 
-
-	
 	<nav class="navbar navbar-default mynav" role="navigation">
 		<div class="container-fluid">
 
@@ -82,8 +80,10 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<!-- 	<a class="navbar-brand"><%= image_tag "logo-logo.png", size: "12x50", class: "text-center logo" %> -->
-			<ul class="nav navbar-nav navbar-right">				
+			<ul class="nav navbar-nav navbar-right">			
+				<li class ="loginbtn"><%= link_to "Signup", root_path, method: :get, :class => "fontwhite" %></li>	
 				<li class ="loginbtn"><%= link_to "Login", new_session_path, method: :get, :class => "fontwhite" %></li>
+				<li class ="loginbtn"><%= link_to "About LineUp", pages_about_path, method: :get, :class => "fontwhite" %></li>
 				
 <% end %>
 </ul><!-- end of ul -->

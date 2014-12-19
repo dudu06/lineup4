@@ -1,5 +1,5 @@
 <div class="spacer"></div>
-<h1>Cut Some!</h1><br>
+<h1>Ready to Get Fresh?</h1><br>
 
 <div class="col-sm-4 col-sm-offset-4">
 	<%= form_for @customers, html: { class: "directUpload" } do |f| %> 
@@ -37,7 +37,7 @@
 	</div>
 	
 	<div class="form-group">
-	<%= f.file_field :avatar, placeholder: "City, State", class: 'form-control' %>
+	<%= f.file_field :avatar %>
 	</div>
 
 	<%= f.submit "Submit", class: 'btn btn-primary'%>

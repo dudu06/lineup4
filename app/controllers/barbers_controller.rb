@@ -36,6 +36,14 @@ class BarbersController < ApplicationController
 		end
 	end
 
+	def followers
+		@barber = Barber.find(params[:id])
+	end	
+
+	def following
+		@barber = Barber.find(params[:id])
+	end
+
 	def barber_params
 		params.require(:barber).permit(:name, 
 		:email, :password, :password_confirmation, 

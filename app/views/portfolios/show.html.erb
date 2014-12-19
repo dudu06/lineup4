@@ -25,6 +25,7 @@
 
 
 
+
 <!-- We had an end after the first if for the current barber. And an end after the current user's if. That worked. We also passed in a Barber only if your the current barber. And passed in a Customer if your the current_user. That worked. For now I'm putting an else. For some reason, if your a customer or barber, you can like the picture. Great! But if both a customer and barber like the same picture, that doesn't increment the count to 2. It will stay at 1. That's a problem. They both liked the same picture so it should say 2. -->
 
 <!-- If I use the else we currently have, it counts the barber's like, but not the customer's like -->
@@ -35,9 +36,11 @@
 <!-- ============================= -->
 <!-- I changed this to get_likes(object) just pass it the object and it'll return the count of both barbers and customers -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <% if current_user %>
   <%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
 <% end %>
+
 
 <% if current_barber %>
   <%= get_likes(@portfolio) %>&nbsp;<span class="glyphicon glyphicon-heart"></span>
@@ -45,6 +48,7 @@
 
 <!-- ============================= -->
 <!-- ============================= -->
+
 
 <br /><br />
 <% if current_barber %>
@@ -56,8 +60,6 @@
 		<%= f.text_field :content, class:"form-control", :placeholder => "Write a comment..." %>  <br />
 	</div>
 </div>
-
-
 
 <% end %>
 <% else %>
