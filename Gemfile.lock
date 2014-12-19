@@ -75,9 +75,6 @@ GEM
     kgio (2.9.2)
     less (2.4.0)
       commonjs (~> 0.2.7)
-    less-rails (2.4.2)
-      actionpack (>= 3.1)
-      less (~> 2.4.0)
     libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -183,7 +180,6 @@ DEPENDENCIES
   font-awesome-less
   jbuilder (~> 1.2)
   jquery-rails
-  less-rails
   paperclip
   pg
   pry-rails
