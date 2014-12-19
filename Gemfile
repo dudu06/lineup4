@@ -82,6 +82,8 @@ gem 'font-awesome-less'
 
 # ÷gem 'acts_as_votable', '~> 0.10.0'
 gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 # RUBY '2.1.2' IS NEEDED TO GET APP ON HEROKU. FIRST GEM NEEDED
 ruby "2.1.2"
