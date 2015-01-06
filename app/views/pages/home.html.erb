@@ -1,17 +1,26 @@
-
 <div class="header"> 
+  
+  <div class="logo"></div> 
 
-<div class="text-center">
-    <br /> <br /> <br /> <br /> <br />
-  <%= image_tag "logo-center.png", size: "200x200", class: "mylogo" %>
-  </div>
-<br />
-  <div class="sign-up">
-    <%= link_to "Register as a Barber", new_barber_path, class: 'btn btn-primary btn-lg btn-info btn-wider' %></a>
-    &nbsp; &nbsp; 
-    <%= link_to "Register as a Customer", new_customer_path, class: 'btn btn-primary btn-lg btn-info btn-wider' %></a>
 
-    <!-- link_to "Log In", new_session_path, class: 'btn btn-primary btn-lg'  -->
+  <div id="hook">
+  	<h1>WE CONNECT TALENTED BARBERS</h1> 
+  	<h3>to stylish customers</h3>
   </div>
+
+
+  <div class="text-center">
+  		<div class="buttons">
+   		<%= button_to "SIGN UP AS A CUSTOMER", new_customer_path, :id => "button1", :method => :get %>
+   		
+   		<%= button_to "SIGN UP AS A BARBER", new_barber_path, :id => "button1", :method => :get %>
+  		</div> 
+
+  </div>
+
+
+      <!--  <%= link_to "Register as a Customer", new_customer_path, class: 'btn btn-primary btn-lg btn-info btn-wider' %></a> -->
 
 </div> 
+
+

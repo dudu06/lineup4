@@ -16,8 +16,37 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Grand+Hotel);
 
 /* IN ORDER FOR BOOTSTRAP TO WORK YOU MUST ADD .SCSS AT THE END OF THE FILE NAME.*/
+
+
+/*.fontnav {
+	font-family: 'Lato', sans-serif;
+	font-color: white;
+	letter-spacing: 2px;
+	font-size: 1em;
+}
+
+.fontnav:hover {
+	font-family: 'Lato', sans-serif;
+	font-color: white;
+}*/
+
+a {
+	color: #FFF700;
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 2px;
+}
+
+a:hover {
+	color: #A29D01;
+	text-decoration: none;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 2px;
+}
 
 .navbar-nav > li > a {
 	padding-top: 14px;
@@ -69,9 +98,13 @@ Home Page once logged in
 }
 
 .btn-primary {
-	background-color: #A82008;
+	background-color: red;
 	font-weight: 100;
 	border: none;
+}
+
+.btn-primary:hover {
+  background-color: #B51013;
 }
 
 body {
@@ -135,6 +168,7 @@ p , #search {
 /*This is the instruction on barber index*/
 .find-barber h1 {
 	text-align: center;
+	font-weight: bold;
 }
 
 .userImage {
@@ -168,6 +202,8 @@ li > .glyphicon {
 	font-weight: bold;
 	font-size: 2em;
 	text-align: center;
+	font-family: 'Lato', sans-serif;
+	color: #B2B2B2;
 }
 
 .barberLocation {
@@ -264,6 +300,7 @@ div.footer.delete-this-class {
 #about h3 {
 	text-align: center;
 	font-size: 2em;
+	font-family: 'Lato', sans-serif;
 	color: white;
 	margin-left: 30px;
 	margin-right: 30px;
@@ -272,6 +309,9 @@ div.footer.delete-this-class {
 
 #about p {
 	width: 480px !important;
-	font-size: 1.5em;
+	font-size: 1.3em;
+	font-family: 'Lato', sans-serif;
+	font-weight: Light 100 !important;
+	text-transform: uppercase;
 	color: white;
 }

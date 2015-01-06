@@ -14,37 +14,41 @@ Root Page
 
 .fresh {
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 .header {
-	background-image: url('background2.png');
+	background-image: url('barbershop.png');
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 92.8%;
     position: absolute;
-    margin-top: -23px;
+    margin-top: 0px;
+  /*  margin-top: -23px;*/
     bottom: 0 !important;
 }
 
+
 .header2 {
-  background-image: url('about-header.png');
+  background-image: url('barberchair.png');
   background-repeat: no-repeat;
   -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 92.8%;
     position: absolute;
     margin-top: -23px;
     bottom: 0 !important;
 }
 
 .loginbtn {
+  color: red;
   z-index: 100000;
   background-color: transparent;
   font-weight: 400;
@@ -60,6 +64,7 @@ Root Page
     -moz-transition: opacity .20s ease-in-out;
     -o-transition: opacity .20s ease-in-out;
 }
+
 
 .btn-wide {
   width: 100px;
@@ -104,15 +109,65 @@ Root Page
 }
 
 .loginbtn:hover {
-  opacity: 1;
+/*  opacity: 1;*/
+  font-family: 'Lato', sans-serif;
+  color: white !important;
+  letter-spacing: 2px;
+  font-size: 1em;
     transition: opacity .20s ease-in-out;
     -webkit-transition: opacity .20s ease-in-out;
     -moz-transition: opacity .20s ease-in-out;
     -o-transition: opacity .20s ease-in-out;
 }
 
-.fontwhite {
-  color: white !important;
+.fontwhite:link {
+  color: black !important;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1em;
+  background:transparent;
+  -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background 1s ease-in;
+}
+
+.fontwhite:active {
+  color: red !important;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1em;
+}
+
+.fontwhite:hover {
+  color: red !important;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1em;
+}
+
+#hook {
+   margin-top: 17%;
+   text-align: center;
+}
+
+#hook h1 {
+   font-family: 'Lato', sans-serif;
+   font-weight: Ultra-Bold 900;
+   font-size: 3.5em;
+   color: white;
+   text-align: center;
+}
+
+#hook h3 {
+   font-family: 'Grand Hotel', cursive;
+   font-weight: 400;
+   font-size: 3em;
+   font-style: italic;
+   color: white;
+   text-align: center;
 }
 
 .barber_button {
@@ -132,3 +187,221 @@ Root Page
   margin: 0 auto;
 }
 
+
+#button1 {
+margin-top: 15px ;
+background-color: red;
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: none;
+width: 280px;
+height: 39px;
+/* text-align: center; */
+margin-left: auto;
+margin-right: auto;
+margin-top: 2%;
+border-radius: 4px;
+cursor: pointer;
+
+ font-family: 'Lato', sans-serif;
+font-weight: 100;
+color: white;
+font-size: 1.2em;
+
+ -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color .2s ease-out, background .2s ease-in;
+}
+
+#button1:hover {
+  background-color: #B51013;
+}
+
+
+#button1-post {
+  margin-left: 47%;
+margin-right: 26%;
+}
+
+#button2 {
+background-color: red;
+width: 280px;
+height: 39px;
+/* text-align: center; */
+margin-left: auto;
+margin-right: auto;
+margin-top: 6%;
+border-radius: 4px;
+cursor: pointer;
+}
+
+#button1 p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 1.2em;
+  text-align: center;
+  color: white;
+  vertical-align:middle;
+/*  padding-top: 50%;*/
+}
+
+#button2 p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 1.2em;
+  text-align: center;
+  color: white;
+  vertical-align:middle;
+/*  padding-top: 50%;*/
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: 32px !important;
+margin-top: 20px;
+}
+
+
+
+
+
+/* MEDIA QUERY BEGINS HERE */
+
+
+@media all and (max-width: 490px){
+  #hook {
+    margin-top: 50%;
+
+  }
+
+  #hook h1 {
+   margin-top: 40%;
+   font-size: 1.8em !important;
+  }
+
+  #hook h3 {
+    font-size: 2.5em !important;
+  }
+
+  #button1 {
+    margin-top: 10%;
+  }
+
+  .mylogo {
+    width: 75%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  #about p {
+    width: 370px !important;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    font-weight: Light 100 !important;
+    text-transform: uppercase;
+    color: white
+}
+
+/*  .navbar-nav.navbar-right:last-child li {
+    text-align: center;
+  }*/
+
+
+}
+
+@media all and (max-width: 690px){
+  .fontwhite {
+    color: #c9c9c9 !important;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1em;
+    background:transparent;
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color .2s ease-out, background 1s ease-in;
+  }
+
+  .fontwhite:hover {
+    color: red !important;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1em;
+  }
+
+  .header {
+    height: 96%;
+  }
+
+  .navbar-brand {
+    z-index: 3000;
+  }
+  
+}
+
+
+@media screen and (max-width: 766px) {
+  .header .logo {
+  background: url('lineup-logo.png') 0 0 no-repeat;
+  display: block;
+  height: 62px;
+  width: 220px;
+  position: relative;
+  z-index: 9;
+  top: 200px;
+  }
+   
+}
+
+
+@media all and (max-width: 767px){
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    display: none;
+  }
+
+ 
+
+}
+
+/*@media all and (min-width: 768px) and (max-width: 799) {
+.header .logo {
+    display: none;
+  }
+
+}*/
+
+@media all and (max-width: 800px){
+  #hook h1 {
+   margin-top: 33%;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   font-size: 1.7em !important;
+  }
+
+  .buttons #button1 {
+    display: inline-block;
+  }
+
+  #hook h3 {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   font-size: 2.7em !important;
+   margin-top: 1px;
+  }
+
+  .navbar-nav.navbar-right:last-child {
+    margin-right: 32px !important;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  
+}
