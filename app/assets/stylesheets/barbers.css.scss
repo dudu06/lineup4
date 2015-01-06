@@ -34,6 +34,17 @@
 	height: auto;
 }
 
+.mylogo {
+	-webkit-animation: head-bobbing 3s ease-in-out;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes head-bobbing {
+	0% { -webkit-transform: rotate(0) translateY(0); }
+	50% { -webkit-transform: rotate(0deg) translateY(-25px); }
+	100% { -webkit-transform: rotate(0) translateY(0);}
+}
+
 body {
 	background-color: #E4E4E0;
 }
@@ -42,6 +53,7 @@ h1 {
 	text-align: center;
 	margin: auto;
 	font-family: 'Lato', sans-serif;
+	font-weight: bold;
 }
 
 h2 {
@@ -265,8 +277,16 @@ GALLERY
 
 .profile-head {
 	position: relative;
-	max-width: 970px;
+	/*max-width: 970px;*/
+	width: 100%;
 	padding: none;
+	text-align: center;
+	background-color: rgba(71, 177, 231, 0.74);
+}
+
+.barber-price {
+	 font-family: 'Lato', sans-serif;
+	 font-size: 1.3em;
 }
 
 #customer-main {
@@ -287,8 +307,10 @@ GALLERY
 
 #customer-main h2 {
 	font-size: 2em;
-	font-weight: normal;
 	text-transform: uppercase;
+		color: rgba(255, 255, 255, 1);
+	font-weight: 100;
+	font-family: 'Rokkitt', serif;
 }
 
 
@@ -315,19 +337,26 @@ ol .dribble-group {
 
 
 .row {
-	max-width: 940px;
+	max-width: 970px;
 	margin: 0 auto;
 	padding: 0 5px;
 	position: relative;
-	/*border-top: 1px solid rgba(0,0,0,0.07);*/
+	background-color: rgba(217, 217, 217, 0.78);
 }
 
 
-/*This holds the main content of the page*/
+/*This holds the main content of the page for barbers*/
 #main {
 	max-width: 970px;
 	width: auto;
 	float: none;
+	/*text-align: center;
+	background-color: #c9c9c9;*/
+}
+
+#main .profile-pic {
+	padding-bottom: 20px;
+	padding-top: 21px;
 }
 
 
@@ -340,6 +369,7 @@ ol .dribble-group {
   font-weight: bold;
   text-align: center;
   margin-bottom: -8px;
+  font-family: 'Lato', sans-serif;
 /*  -webkit-transition: opacity 0.3s ease-out;  
      -moz-transition: opacity 0.3s ease-out;  
       -ms-transition: opacity 0.3s ease-out;  
@@ -350,11 +380,27 @@ ol .dribble-group {
 .row #picture-holder p {
   text-decoration: none;
   font-size: 12px;
-  color: #747273;
+  color: black;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
+
+.profile-head h2 {
+	color: rgba(255, 255, 255, 1);
+	font-weight: 100;
+	font-family: 'Rokkitt', serif;
+}
+
+.follow-button {
+	margin-top: 10px;
+}
+
+/*#main a {
+	color: red;
+}*/
 
 /*.row #picture-holder h5:hover {
   opacity: 1; 

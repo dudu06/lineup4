@@ -16,7 +16,7 @@
 
 				<% if current_user == Customer.find(params[:id]) %>
 				<% else %>
-				<%= @customer.follows?(current_barber || current_user) %>
+		<!-- 		<%= @customer.follows?(current_barber || current_user) %> -->
 
 				<%# if @barber.follows?(current_barber || current_user) %>
 				<%#= link_to 'Unfollow Barber', barber_unfollow_path(@barber || @customer), method: :post, class: 'btn btn-primary btn-lg' %>
@@ -40,7 +40,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-home"><%= @customer.zipcode %></span>
 
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= mail_to @customer.email do %>
-				<span class="glyphicon glyphicon-envelope"></span></a>
+				<span class="glyphicon glyphicon-envelope"></span> CONTACT</a>
 				<% end %>
 			</div>
 		</div> <!-- end of profile-head div -->

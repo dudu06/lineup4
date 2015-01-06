@@ -4,18 +4,16 @@
 		
 		<div class="profile-head">
 			
+			<div class="profile-pic">
 			<h1><%= image_tag @barber.avatar(:medium), class: "img-circle", width: 120, height: 120 %></h1>
-			<h1 class="userNameHere"><%= @barber.name %></h1>
+			</div>
+
+			<h1><%= @barber.name %></h1>
 			<h2><%= @barber.bio %></h2>
 
-			
-			<div class="contact-info">
-					
-				<%# Follow.where(followable_id: 1).each do |x| %>
-				<%#= x.follower_id %>
-				<%# end %>
 
-				<% if current_barber == Barber.find(params[:id]) %>
+			<div class="follow-button">
+			<% if current_barber == Barber.find(params[:id]) %>
 				<% else %>
 			<!-- 	<%= @barber.follows?(current_barber || current_user) %> THIS SHOWS TRUE OR FALSE-->
 
@@ -26,6 +24,16 @@
 				<% end %> 
 
 				<% end %>
+			</div>
+
+			
+			<div class="contact-info">
+					
+				<%# Follow.where(followable_id: 1).each do |x| %>
+				<%#= x.follower_id %>
+				<%# end %>
+
+				
 <!-- When a customer follows a barber it shows up in the console that the follow is false. Probably based on the current code above. -->
 
 
@@ -34,21 +42,21 @@
 				<% if current_barber %>
 				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
 					<!-- Displays how many fans barber has -->
-				<%= @barber.followables(Barber || Customer).count %><span> fans</span>
+				<%= @barber.followables(Barber || Customer).count %><span> FANS</span>
 				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
 					<!-- Displays how many people barber is following -->
-				<%= @barber.followers(Barber || Customer).count %><span> following</span>
+				<%= @barber.followers(Barber || Customer).count %><span> FOLLOWING</span>
 				</a>
 				<% end %>
 
 				<!-- I updated this logic below on 11-13...I think it works, but check back again on 11-15 to make sure -->
 				<% if current_user %>
 				<a href="<%= barber_pages_path(@barber.id || @customer.id) %>">
-				<%= @barber.followables(Customer || Barber).count %>&nbsp;<span>fans</span>
+				<%= @barber.followables(Customer || Barber).count %>&nbsp;<span>FANS</span>
 				</a>&nbsp;&nbsp;
 				<a href="<%= pages_following_path(@barber.id || @customer.id) %>">
-				<%= @barber.followers(Customer || Barber).count %>&nbsp;<span>following</span>
+				<%= @barber.followers(Customer || Barber).count %>&nbsp;<span>FOLLOWING</span>
 				</a>
 
 				 <%= get_fans(@barber || @customer) %>&nbsp;<span>new fans</span>
@@ -62,18 +70,18 @@
 
 				<span class="contactBarberIcon">
 					<%= mail_to @barber.email do %>
-					<span class="glyphicon glyphicon-envelope"></span> Contact</a>
+					<span class="glyphicon glyphicon-envelope"></span> CONTACT</a>
 					<% end %>
 				</span>
 
-				<span class="glyphicon glyphicon-usd"><%= @barber.low_price %>-<%= @barber.high_price %></span>
+				<span class="barber-price"><span class="glyphicon glyphicon-usd"></span>&nbsp;<%= @barber.low_price %>&nbsp;-&nbsp;<%= @barber.high_price %></span>
 			</div>
 		</div> <!-- end of profile-head div -->
 
 
 <div class="row">	
 				<% @portfolio.each do |p| %>
-		<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+		<div id="picture-holder" class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 			<ol>
 					<a href="<%= barber_portfolio_path(@barber, p) %>">
 					<li><%= image_tag p.photo(:medium), class: "img-responsive", width: 400 %></li>
@@ -82,7 +90,7 @@
 					</div>
 				<% end %> <!-- This is the end for the portfolio do p -->
 			</ol>
-			<%= will_paginate @portfolio %>	
+			<%= will_paginate @portfolio %>
 		</div>
 	</div> <!-- end of row div -->
 
