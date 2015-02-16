@@ -1,26 +1,79 @@
-<div class="header"> 
-  
-  <div class="logo"></div> 
+<div class="landing">
+<div class="overlay"></div> 
+  <div class="header"> 
+    
+    <div class="logo"></div> 
 
 
-  <div id="hook">
-  	<h1>WE CONNECT TALENTED BARBERS</h1> 
-  	<h3>to stylish customers</h3>
-  </div>
+    <div id="hook">
+      <h1>WE CONNECT TALENTED BARBERS</h1> 
+      <h1>TO STYLISH CUSTOMERS</h1> 
+      <h3>ready to get fresh?</h3>
+    
+
+      <div class="text-center">
+          <div class="buttons">
+          <%= button_to "SIGN UP AS A CUSTOMER", new_customer_path, :id => "button1", :method => :get %>
+          
+          <%= button_to "SIGN UP AS A BARBER", new_barber_path, :id => "button1", :method => :get %>
+          </div> 
+      </div>   
+    </div> <!-- end of hook -->
+   
+
+  </div> <!-- end of header -->
+</div> <!-- end of landing -->
+
+<div class="how-works">
+  <h1>CURRENT MARKET</h1> 
+
+  <ul class="fact-icons">
+      <li>
+      <%= image_tag "facts-1.png", size: "220x180", class: "text-center" %>
+        <h5>BOOTH RENTAL COSTS</h5>
+        <p>The average barber pays between $400 - $700 to work in an established shop.</p>
+      </li>
+      <li>
+      <!-- <img src="how-2.png"> -->
+      <%= image_tag "facts-2.png", size: "220x180" %>
+        <h5>TRAVELING?</h5>
+        <p> If traveling to an unfamiliar place, it can be tough for you to find a reliable barber.</p>
+      </li>
+      <li>
+      <!-- <img src="how-3.png"> -->
+      <%= image_tag "facts-3.png", size: "220x180" %>
+        <h5>WHAT WE DO</h5>
+        <p>We help customers find barbers in neighborhoods by zipcode and increase business for shops.</p>
+      </li>
+  </ul>
 
 
-  <div class="text-center">
-  		<div class="buttons">
-   		<%= button_to "SIGN UP AS A CUSTOMER", new_customer_path, :id => "button1", :method => :get %>
-   		
-   		<%= button_to "SIGN UP AS A BARBER", new_barber_path, :id => "button1", :method => :get %>
-  		</div> 
+<div class="bg-color">
+    <ul class="how">
+    <h1>HOW LINEUP WORKS</h1>
 
-  </div>
+      <li>
+      <%= image_tag "how-1.png", size: "220x180", class: "text-center" %>
+        <h5> WANT TO LOOK GREAT? </h5>
+        <p> Sign up on LineUp and get started! </p>
+      </li>
+      <li>
+      <!-- <img src="how-2.png"> -->
+      <%= image_tag "how-2.png", size: "220x180" %>
+        <h5>SEARCH BY ZIPCODE</h5>
+        <p> Barbers registered on our site can be found in your area.</p>
+      </li>
+      <li>
+      <!-- <img src="how-3.png"> -->
+      <%= image_tag "how-3.png", size: "220x180" %>
+        <h5>GET IN TOUCH! </h5>
+        <p> Add barbers as friends and get in touch with them by e-mail. </p>
+      </li>
+  </ul>
+
+</div>
 
 
-      <!--  <%= link_to "Register as a Customer", new_customer_path, class: 'btn btn-primary btn-lg btn-info btn-wider' %></a> -->
 
-</div> 
 
 

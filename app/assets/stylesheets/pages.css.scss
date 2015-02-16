@@ -2,30 +2,129 @@
 Root Page
 ****************************/
 
+.landing {
+  height: 567px;
+  width: 100%;
+  position: relative;
+}
+
+.overlay {
+  height: 567px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: 10000;
+  opacity: .30;
+}
+
+.how-works {
+  padding-top: 30px;
+}
+
+.how-works h1 {
+  border-bottom: solid;
+  border-width: 6px;
+  border-color: black;
+  width: 325px;
+}
+
+.fact-icons {
+  width: 1245px;
+  height: 360px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.fact-icons li {
+  width: 241px;
+  margin: 0 80px 0 80px;
+  float: left;
+  list-style: none;
+}
+
+.fact-icons h5 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.fact-icons p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -12px;
+}
+
+.bg-color {
+  background-color: #F6DC3B;
+  width: 100%;
+  height: 470px;
+}
+
+.how {
+  width: 1245px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  background-color: #F6DC3B;
+}
+
+.how li {
+  width: 270px;
+  margin: 0 50px 0 80px;
+  float: left;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.how h5 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.how h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 2.4em;
+  text-align: center;
+  width: 353px;
+}
+
+.how p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: -12px;
+}
 
 .logo-home-page {
-	padding-top: 100px;
+  padding-top: 100px;
 }
 
 .sign-up {
-	text-align: center;
-	padding-top: 10px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .fresh {
   color: white;
   font-family: 'Lato', sans-serif;
+  padding-top: 0px;
 }
 
 .header {
-	background-image: url('barbershop.png');
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
+  background: url('barbershop.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     width: 100%;
-    height: 92.8%;
+    height: 565px;     /* 92.8%*/
+    top: 0;
     position: absolute;
     margin-top: 0px;
   /*  margin-top: -23px;*/
@@ -44,6 +143,22 @@ Root Page
     height: 92.8%;
     position: absolute;
     margin-top: -23px;
+    bottom: 0 !important;
+}
+
+.header3 {
+  background: url('barbershop.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;     
+    top: 0;
+    position: absolute;
+    margin-top: 0px;
+  /*  margin-top: -23px;*/
     bottom: 0 !important;
 }
 
@@ -149,8 +264,12 @@ Root Page
 }
 
 #hook {
-   margin-top: 17%;
-   text-align: center;
+  margin-top: 6%;
+  text-align: center;
+  z-index: 20000;
+  position: absolute;
+  right: 0;
+  left: 0;
 }
 
 #hook h1 {
@@ -159,6 +278,7 @@ Root Page
    font-size: 3.5em;
    color: white;
    text-align: center;
+   letter-spacing: 6px;
 }
 
 #hook h3 {
@@ -171,15 +291,15 @@ Root Page
 }
 
 .barber_button {
-	width: 300px;
-	height: 60px;
-	background-color: blue;
-	border-radius: 40px;
+  width: 300px;
+  height: 60px;
+  background-color: blue;
+  border-radius: 40px;
 }
 
 .log-in {
-	text-align: center;
-	padding-top: 2%;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .inputF {
@@ -205,7 +325,7 @@ border-radius: 4px;
 cursor: pointer;
 
  font-family: 'Lato', sans-serif;
-font-weight: 100;
+font-weight: 400;
 color: white;
 font-size: 1.2em;
 
@@ -215,6 +335,7 @@ font-size: 1.2em;
   -webkit-transition:color .2s ease-out, background 1s ease-in;
   /* ...and now override with proper CSS property */
   transition:color .2s ease-out, background .2s ease-in;
+  letter-spacing: 1px;
 }
 
 #button1:hover {
