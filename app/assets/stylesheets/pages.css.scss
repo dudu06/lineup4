@@ -1,134 +1,53 @@
 /****************************
 Root Page
 ****************************/
+* { box-sizing: border-box; }
 
-.landing {
-  height: 567px;
-  width: 100%;
-  position: relative;
-}
+.clearfix {  overflow: auto;}
+#gutter { max-width: 960px; margin: 0 auto; box-shadow: 0px 0px 100px -45px }
 
-.overlay {
-  height: 566px;
-  width: 100%;
-  background-color: black;
-  position: absolute;
-  z-index: 10000;
-  opacity: .30;
-}
+.landing { height: 500px; width: 100%; position: relative;}
+.overlay { height: 499px; width: 100%; background-color: black; position: absolute; z-index: 10000; opacity: .30; }
 
-.how-works {
-  padding-top: 30px;
-}
 
-.how-works h1 {
-  border-bottom: solid;
-  border-width: 6px;
-  border-color: black;
-  width: 325px;
-}
+/*HOME PAGE SECTION STYLES*/
+.how-works { background: #fff; padding-top: 30px; margin: auto;border-bottom: 1px solid red;}
+.fact-icons { width: 90%; height: 360px; margin: auto;padding: 20px 0 0; }
+.how-works .fact-icons li, .how .fact-icons li {width: 33%;padding: 0;margin: 0;display: inline-block; height: 320px;vertical-align: text-top;text-align: center; }
+.fact-icons h5 {margin: 20px auto 10px;font-size: 30px;color: #000000;}
+.fact-icons p {font-family: 'Lato', sans-serif;font-weight: 400;text-align: center;margin-top: -12px;}
+.how { background: #fff; margin: 0 auto;padding-top: 50px; }
+.how-works h1, .how-works h5, .how-works p,
+.how h1, .how h5, .how p { font-family: 'Lato', sans-serif; }
+.how h1 {font-size: 2.4em;text-align: center; white-space: nowrap;width: 355px; }
+.fact-icons h5, .how h5 {font-weight: 800;font-size: 1.5em;text-align: center;}
+.fact-icons p, .how p {font-weight: 400;text-align: center;margin-top: -12px; text-align: justify;}
+.fact-icons li img { max-width: 450px; min-width: 250px;}
+.how ul.fact-icons li img { min-width: 220px}
+/*END OF HOME PAGE SECTION STYLES*/
 
-.fact-icons {
-  width: 1245px;
-  height: 360px;
-  margin: 0 auto;
-  padding-top: 20px;
-}
 
-.fact-icons li {
-  width: 241px;
-  margin: 0 80px 0 80px;
-  float: left;
-  list-style: none;
-}
+/*CUSTOMERS NEW STYLES*/
+#sign-up-container {background: rgba(0,0,0,0.4); border-radius: 2px;box-shadow: 0 0 10px 0px black;; width: 60%;height: 450px;margin: 0 auto;padding-top: 50px;padding-left: 2%; padding-right: 2%;}
 
-.fact-icons h5 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  font-size: 1.5em;
-  text-align: center;
-}
+.logo-home-page {padding-top: 100px; }
 
-.fact-icons p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  text-align: center;
-  margin-top: -12px;
-}
+.sign-up { text-align: center;padding-top: 10px;}
 
-.bg-color {
-  background-color: #F6DC3B;
-  width: 100%;
-  height: 470px;
-}
-
-.how {
-  width: 1245px;
-  height: 100%;
-  margin: 0 auto;
-  padding-top: 20px;
-  background-color: #F6DC3B;
-}
-
-.how li {
-  width: 270px;
-  margin: 0 50px 0 80px;
-  float: left;
-  list-style: none;
-  padding-top: 30px;
-}
-
-.how h5 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  font-size: 1.5em;
-  text-align: center;
-}
-
-.how h1 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 800;
-  font-size: 2.4em;
-  text-align: center;
-  width: 353px;
-}
-
-.how p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  text-align: center;
-  margin-top: -12px;
-}
-
-.logo-home-page {
-  padding-top: 100px;
-}
-
-.sign-up {
-  text-align: center;
-  padding-top: 10px;
-}
-
-.fresh {
-  color: white;
-  font-family: 'Lato', sans-serif;
-  padding-top: 0px;
-}
+.fresh {color: white;font-family: 'Lato', sans-serif;padding-top: 0px;}
 
 .header {
   background: url('barbershop.png');
   background-repeat: no-repeat;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  margin-top: 0px;
+  bottom: 0 !important;
   -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    height: 566px;     /* 92.8%*/
-    top: 0;
-    position: absolute;
-    margin-top: 0px;
-  /*  margin-top: -23px;*/
-    bottom: 0 !important;
+  background-size: cover;
 }
 
 
@@ -158,7 +77,6 @@ Root Page
     top: 0;
     position: absolute;
     margin-top: 0px;
-  /*  margin-top: -23px;*/
     bottom: 0 !important;
 }
 
@@ -189,170 +107,52 @@ Root Page
   -o-transition:.20s ease-in-out;
 }
 
-.imageic {
-  font-size: 10em;
-  margin-bottom: .3em;
-}
+.imageic {font-size: 10em;margin-bottom: .3em;}
+.imageict {font-size: 7em;margin-bottom: .3em;}
 
-.imageict {
-  font-size: 7em;
-  margin-bottom: .3em;
-}
+.btn-wide:hover {background-color: #F5271C;transition: .20s ease-in-out;-webkit-transition:.20s ease-in-out; -moz-transition:.20s ease-in-out;-o-transition:.20s ease-in-out;}
+.btn-wider { width: 200px;transition: .20s ease-in-out;-webkit-transition:.20s ease-in-out;-moz-transition:.20s ease-in-out;-o-transition:.20s ease-in-out;}
+.btn-wider:hover {background-color: #F5271C;transition: .20s ease-in-out;-webkit-transition:.20s ease-in-out;-moz-transition:.20s ease-in-out;-o-transition:.20s ease-in-out; }
 
-.btn-wide:hover {
-  background-color: #F5271C;
-    transition: .20s ease-in-out;
-    -webkit-transition:.20s ease-in-out;
-    -moz-transition:.20s ease-in-out;
-    -o-transition:.20s ease-in-out;
-}
+.loginbtn:hover { font-family: 'Lato', sans-serif;color: white !important;letter-spacing: 2px;font-size: 1em;transition: opacity .20s ease-in-out;-webkit-transition: opacity .20s ease-in-out;-moz-transition: opacity .20s ease-in-out; -o-transition: opacity .20s ease-in-out;}
 
-.btn-wider {
-  width: 200px;
-  transition: .20s ease-in-out;
-  -webkit-transition:.20s ease-in-out;
-  -moz-transition:.20s ease-in-out;
-  -o-transition:.20s ease-in-out;
-}
+.fontwhite:link {font-family: 'Lato', sans-serif;letter-spacing: 2px;font-size: 1em;}
 
-.btn-wider:hover {
-  background-color: #F5271C;
-    transition: .20s ease-in-out;
-    -webkit-transition:.20s ease-in-out;
-    -moz-transition:.20s ease-in-out;
-    -o-transition:.20s ease-in-out;
-}
+/*NAVIGATION STYLES*/
+/*NAV LINK COLORS - */
+#navigation { }
+.navbar-default .navbar-nav > li > a { color: #999999;-webkit-transition: color .35s ease-out}
+.fontwhite:active { color: red !important; font-family: 'Lato', sans-serif;letter-spacing: 2px; font-size: 1em;}
+.fontwhite:hover { color: red !important; font-family: 'Lato', sans-serif; letter-spacing: 2px; font-size: 1em;}
 
-.loginbtn:hover {
-/*  opacity: 1;*/
-  font-family: 'Lato', sans-serif;
-  color: white !important;
-  letter-spacing: 2px;
-  font-size: 1em;
-    transition: opacity .20s ease-in-out;
-    -webkit-transition: opacity .20s ease-in-out;
-    -moz-transition: opacity .20s ease-in-out;
-    -o-transition: opacity .20s ease-in-out;
-}
+/*SIGN-UP-BUTTONS*/
+.button-wrapper { padding: 0 20% 0 20%; margin-top: 40px;}
+.ctas { position: relative; margin: auto; max-width: 960px;  z-index: 12000;}
+.sign-up-button {border-radius: 2px; float: left; background-color: transparent; line-height: 2.4; border: 1px solid #fff; margin-top: 15px; color: white; letter-spacing: 3px; font-size: 1.1em; min-width: 280px; transition: all 1s ease;}
 
-.fontwhite:link {
-  color: black !important;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 2px;
-  font-size: 1em;
-  background:transparent;
-  -o-transition:color .2s ease-out, background 1s ease-in;
-  -ms-transition:color .2s ease-out, background 1s ease-in;
-  -moz-transition:color .2s ease-out, background 1s ease-in;
-  -webkit-transition:color .2s ease-out, background 1s ease-in;
-  /* ...and now override with proper CSS property */
-  transition:color .2s ease-out, background 1s ease-in;
-}
+/*HOOK ON HOME PAGE*/
+#hook { position: relative; margin-top: 15%; text-align: center; z-index: 20000;}
+#hook h1 { font-family: 'Lato', sans-serif;font-weight: Ultra-Bold 900;font-size: 2.5em;color: white;text-align: center;letter-spacing: 6px; line-height: 45px}
+#hook h3 { font-family: 'Grand Hotel', cursive; font-weight: 400; font-size: 3em; font-style: italic; color: white; text-align: center; }
+#button1, #button3 {  }
+#button1:hover, #button3:hover { background-color: #B51013; }
+#button1 { margin-right: 7px}
 
-.fontwhite:active {
-  color: red !important;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 2px;
-  font-size: 1em;
-}
+.barber_button { width: 300px;height: 60px;background-color: blue;border-radius: 40px;}
 
-.fontwhite:hover {
-  color: red !important;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 2px;
-  font-size: 1em;
-}
-
-#hook {
-  margin-top: 6%;
-  text-align: center;
-  z-index: 20000;
-  position: absolute;
-  right: 0;
-  left: 0;
-}
-
-#hook h1 {
-   font-family: 'Lato', sans-serif;
-   font-weight: Ultra-Bold 900;
-   font-size: 3.5em;
-   color: white;
-   text-align: center;
-   letter-spacing: 6px;
-}
-
-#hook h3 {
-   font-family: 'Grand Hotel', cursive;
-   font-weight: 400;
-   font-size: 3em;
-   font-style: italic;
-   color: white;
-   text-align: center;
-}
-
-.barber_button {
-  width: 300px;
-  height: 60px;
-  background-color: blue;
-  border-radius: 40px;
-}
-
-.log-in {
-  text-align: center;
-  padding-top: 10px;
-}
+.log-in {text-align: center;padding-top: 10px;}
 
 .inputF {
   width: 300px;
   margin: 0 auto;
 }
 
-
-#button1 {
-margin-top: 15px ;
-background-color: red;
-border-top: none;
-border-left: none;
-border-right: none;
-border-bottom: none;
-width: 280px;
-height: 39px;
-/* text-align: center; */
-margin-left: auto;
-margin-right: auto;
-margin-top: 2%;
-border-radius: 4px;
-cursor: pointer;
-
- font-family: 'Lato', sans-serif;
-font-weight: 400;
-color: white;
-font-size: 1.2em;
-
- -o-transition:color .2s ease-out, background 1s ease-in;
-  -ms-transition:color .2s ease-out, background 1s ease-in;
-  -moz-transition:color .2s ease-out, background 1s ease-in;
-  -webkit-transition:color .2s ease-out, background 1s ease-in;
-  /* ...and now override with proper CSS property */
-  transition:color .2s ease-out, background .2s ease-in;
-  letter-spacing: 1px;
-}
-
-#button1:hover {
-  background-color: #B51013;
-}
-
-
-#button1-post {
-  margin-left: 47%;
-margin-right: 26%;
-}
+#button1-post { margin-left: 47%; margin-right: 26%;}
 
 #button2 {
 background-color: red;
 width: 280px;
 height: 39px;
-/* text-align: center; */
 margin-left: auto;
 margin-right: auto;
 margin-top: 6%;
@@ -360,169 +160,47 @@ border-radius: 4px;
 cursor: pointer;
 }
 
-#button1 p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 1.2em;
-  text-align: center;
-  color: white;
-  vertical-align:middle;
-/*  padding-top: 50%;*/
-}
-
-#button2 p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-size: 1.2em;
-  text-align: center;
-  color: white;
-  vertical-align:middle;
-/*  padding-top: 50%;*/
-}
-
-.navbar-nav.navbar-right:last-child {
-margin-right: 32px !important;
-margin-top: 20px;
-}
+#button1 p, #button2 p {font-family: 'Lato', sans-serif; font-weight: 100;ont-size: 1.2em;text-align: center;color: #fff;vertical-align:middle;}
+.navbar-nav.navbar-right:last-child {margin-right: 32px !important;margin-top: 20px; }
 
 
+/*HELPER CLASSES!*/
+.gutter { margin: auto; }
+.full { width: 100%; }
+.yellow-bg { background-color: #F6DC3B; }
+.logo { display: none; }
+.logo2 { margin-top: 25px; }
+.navbar-default .logo2 { margin: 25px 0 0 0;}
+.navbar-toggle { margin-top: 35px;}
 
+
+.nav li a { color: red;}
+.navbar { margin-bottom: 0; border-bottom: 1px solid red; border-radius: 0;}
 
 
 /* MEDIA QUERY BEGINS HERE */
-
-
-@media all and (max-width: 490px){
-  #hook {
-    margin-top: 50%;
-
-  }
-
-  #hook h1 {
-   margin-top: 40%;
-   font-size: 1.8em !important;
-  }
-
-  #hook h3 {
-    font-size: 2.5em !important;
-  }
-
-  #button1 {
-    margin-top: 10%;
-  }
-
-  .mylogo {
-    width: 75%;
-    margin: 0 auto;
-    height: auto;
-  }
-
-  #about p {
-    width: 370px !important;
-    text-align: center;
-    font-size: 1.3em;
-    font-family: 'Lato', sans-serif;
-    font-weight: Light 100 !important;
-    text-transform: uppercase;
-    color: white
+@media screen and (min-width: 575) {
 }
 
-/*  .navbar-nav.navbar-right:last-child li {
-    text-align: center;
-  }*/
-
-
+@media screen and (max-width: 575px) {
+  .logo { display: none; }
+  .navbar-collapse-1 { max-height: 400px; text-align: center; }
+  .loginbtn { opacity: none; width: 100%; } /*STOPPPED HERE*/
 }
 
-@media all and (max-width: 690px){
-  .fontwhite {
-    color: #c9c9c9 !important;
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 2px;
-    font-size: 1em;
-    background:transparent;
-    -o-transition:color .2s ease-out, background 1s ease-in;
-    -ms-transition:color .2s ease-out, background 1s ease-in;
-    -moz-transition:color .2s ease-out, background 1s ease-in;
-    -webkit-transition:color .2s ease-out, background 1s ease-in;
-    /* ...and now override with proper CSS property */
-    transition:color .2s ease-out, background 1s ease-in;
-  }
-
-  .fontwhite:hover {
-    color: red !important;
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 2px;
-    font-size: 1em;
-  }
-
-  .header {
-    height: 96%;
-  }
-
-  .navbar-brand {
-    z-index: 3000;
-  }
-  
+@media screen and (max-width: 620px) {
+  .how-works .fact-icons li { width: 100%; }
+  #hook { margin-top: 225px; }
+  #hook h1 { font-family: 'Lato', sans-serif; font-weight: Ultra-Bold 900; font-size: 2em; color: white; line-height: 40px; text-align: center; letter-spacing: 1px; }
+  #button1, #button3 { width: 90%; }
+  .nav { padding: none; }
+  /*.navbar-collapse .navbar-nav .navbar-right:last-child { margin-right: 0;}*/
+  .navbar-nav.navbar-right:last-child  { margin-right: 0; margin: auto;}
+  .navbar-brand { padding: none; }
 }
-
-
-@media screen and (max-width: 766px) {
-  .header .logo {
-  background: url('lineup-logo.png') 0 0 no-repeat;
-  display: block;
-  height: 62px;
-  width: 220px;
-  position: relative;
-  z-index: 9;
-  top: 165px;
-  }
-   
-}
-
 
 @media all and (max-width: 767px){
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    display: none;
-  }
-
- 
-
 }
 
-/*@media all and (min-width: 768px) and (max-width: 799) {
-.header .logo {
-    display: none;
-  }
-
-}*/
-
-@media all and (max-width: 800px){
-  #hook h1 {
-   margin-top: 33%;
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
-   font-size: 1.7em !important;
-  }
-
-  .buttons #button1 {
-    display: inline-block;
-  }
-
-  #hook h3 {
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
-   font-size: 2.7em !important;
-   margin-top: 1px;
-  }
-
-  .navbar-nav.navbar-right:last-child {
-    margin-right: 32px !important;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  
+@media all and (max-width: 800px){  
 }

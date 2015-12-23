@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.txt-box {
+  display: block;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #fff; 
+  color: #eeeeee;
+  font-size: 1em;
+  font-weight: 200;
+  width: 100px;
+  border-bottom: 1px solid #EFEC4F;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius:2px;
+  transition: .15s all ease-out
+}
+.txt-box:focus { 
+  width: 100%;
+  outline: none;
+  border-bottom: 1px solid #081031;
+  padding-top: 10px;
+  transition: .15s all ease-out
+}
+
 .thumbnail {
 	margin-bottom: 7px;
 }
@@ -46,15 +70,16 @@
 	100% { -webkit-transform: rotate(0) translateY(0);}
 }
 
-body {
+/*body {
 	background-color: #E4E4E0;
-}
+}*/
 
 h1 {
 	text-align: center;
 	margin: auto;
 	font-family: 'Lato', sans-serif;
 	font-weight: bold;
+	font-size: 2.5em
 }
 
 h2 {

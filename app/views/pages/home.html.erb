@@ -1,78 +1,60 @@
-<div class="landing">
-<div class="overlay"></div> 
-  <div class="header"> 
-    
-    <div class="logo"></div> 
+<body>
+<div id="gutter">
 
-
+  <div class="landing">
+    <div class="overlay"></div> 
+    <div class="header"><div class="logo"></div> 
     <div id="hook">
-      <h1>WE CONNECT TALENTED BARBERS</h1> 
-      <h1>TO STYLISH CUSTOMERS</h1> 
-      <h3>ready to get fresh?</h3>
-    
-
-      <div class="text-center">
-          <div class="buttons">
-          <%= button_to "SIGN UP AS A CUSTOMER", new_customer_path, :id => "button1", :method => :get %>
-          
-          <%= button_to "SIGN UP AS A BARBER", new_barber_path, :id => "button1", :method => :get %>
-          </div> 
-      </div>   
+      <h1>THE EASIER WAY TO FIND TALENTED<br>BARBERS IN YOUR NEIGHBORHOOD</h1>
+      <!-- <h3>ready to get fresh?</h3> -->
     </div> <!-- end of hook -->
-   
-
+    <div class="text-center ctas">
+      <div class="button-wrapper">
+        <%= button_to "CUSTOMER SIGN UP", new_customer_path, :id => "button1", class: "sign-up-button", :method => :get %>
+        <%= button_to "BARBER SIGN UP", new_barber_path, :id => "button3", class: "sign-up-button", :method => :get %>
+      </div> <!-- end of button-wrapper -->
+    </div> <!-- end of text center ctas  -->
   </div> <!-- end of header -->
 </div> <!-- end of landing -->
 
-<div class="how-works">
-  <h1>CURRENT MARKET</h1> 
 
-  <ul class="fact-icons">
+  <div class="how-works full clearfix">
+    <h1>CURRENT MARKET</h1> 
+    <ul class="fact-icons">
       <li>
-      <%= image_tag "facts-1.png", size: "220x180", class: "text-center" %>
-        <h5>BOOTH RENTAL COSTS</h5>
-        <p>The average barber pays between $400 - $700 to work in an established shop.</p>
-      </li>
+        <%= image_tag "facts-1.png", size: "220x180" %><h5>BOOTH RENTAL COSTS</h5><p>The average barber pays between $400 - $700 to work in an established shop.</p>
+      </li> <!-- end of first li -->
       <li>
-      <!-- <img src="how-2.png"> -->
-      <%= image_tag "facts-2.png", size: "220x180" %>
-        <h5>TRAVELING?</h5>
-        <p> If traveling to an unfamiliar place, it can be tough for you to find a reliable barber.</p>
-      </li>
+        <%= image_tag "facts-2.png", size: "220x180" %><h5>TRAVELING?</h5><p> If traveling to an unfamiliar place, it can be tough for you to find a reliable barber.</p>
+      </li> <!-- end of second li -->
       <li>
-      <!-- <img src="how-3.png"> -->
-      <%= image_tag "facts-3.png", size: "220x180" %>
-        <h5>WHAT WE DO</h5>
-        <p>We help customers find barbers in neighborhoods by zipcode and increase business for shops.</p>
-      </li>
-  </ul>
+        <%= image_tag "facts-3.png", size: "220x180" %><h5>WHAT WE DO</h5> <p>We help customers find barbers in neighborhoods by zipcode and increase business for shops.</p>
+      </li> <!-- end of third li -->
+    </ul>
+  </div>
 
 
-<div class="bg-color">
-    <ul class="how">
+  <div class="how full clearfix">
     <h1>HOW LINEUP WORKS</h1>
-
+    <ul class="fact-icons">
       <li>
-      <%= image_tag "how-1.png", size: "220x180", class: "text-center" %>
-        <h5> WANT TO LOOK GREAT? </h5>
-        <p> Sign up on LineUp and get started! </p>
-      </li>
+        <%= image_tag "how-1.png", size: "220x180" %><h5> WANT TO LOOK GREAT? </h5><p> Sign up on LineUp and get started! </p>
+      </li> <!-- end of first li -->
       <li>
-      <!-- <img src="how-2.png"> -->
-      <%= image_tag "how-2.png", size: "220x180" %>
-        <h5>SEARCH BY ZIPCODE</h5>
-        <p> Barbers registered on our site can be found in your area.</p>
-      </li>
+        <%= image_tag "how-2.png", size: "220x180" %><h5>SEARCH BY ZIPCODE</h5><p> Barbers registered on our site can be found in your area.</p>
+      </li> <!-- end of second li -->
       <li>
-      <!-- <img src="how-3.png"> -->
-      <%= image_tag "how-3.png", size: "220x180" %>
-        <h5>GET IN TOUCH! </h5>
-        <p> Add barbers as friends and get in touch with them by e-mail. </p>
-      </li>
-  </ul>
+        <%= image_tag "how-3.png", size: "220x180" %><h5>GET IN TOUCH! </h5><p> Add barbers as friends and get in touch with them by e-mail. </p>
+      </li> <!-- end of third li -->
+    </ul>
+  </div>
 
-</div>
+  <div class="footer">
+    <h1>
+  </div>
 
+</div> <!-- end of full page gutter -->
+</body>
 
 
 

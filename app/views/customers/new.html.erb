@@ -1,38 +1,32 @@
-<div class="spacer"></div>
-<h1>READY TO LOOK FANTASTIC?</h1><br>
+<div id="gutter" class="white-bg">
+		<div class="spacer"></div>
 
-<div class="col-sm-4 col-sm-offset-4">
-	<%= form_for @customers, html: { class: "directUpload" } do |f| %> 
+	<div id="sign-up-container">
+		<h1>READY TO LOOK FANTASTIC?</h1><br>
+		<%= form_for @customers, html: { class: "directUpload" } do |f| %> 
+		<div class="form-group">
+			<%= f.text_field :email, placeholder: "E-Mail", class: 'txt-box' %>
+		</div>
+		<div class="form-group">
+			<%= f.text_field :name, placeholder: "Name", class: 'txt-box' %>
+		</div>
+		<div class="form-group">
+			<%= f.text_field :zipcode, placeholder: "zipcode", class: 'txt-box' %>
+		</div>
+		<div class="form-group">
+			<%= f.password_field :password, placeholder: "Password", class: 'txt-box' %>
+		</div>
+		<div class="form-group">
+			<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: 'txt-box' %>
+		</div>
+		<div class="form-group">
+			<%= f.file_field :avatar %>
+		</div>
 
+		<%= f.submit "Submit", class: 'btn btn-primary'%>
 
-	<div class="form-group">
-	<%= f.text_field :email, placeholder: "E-Mail", class: 'form-control' %>
+		<% end %>
 	</div>
-	
-	<div class="form-group">
-	<%= f.text_field :name, placeholder: "Name", class: 'form-control' %>
-	</div>
-
-	<div class="form-group">
-	<%= f.text_field :zipcode, placeholder: "zipcode", class: 'form-control' %>
-	</div>
-
-
-	<div class="form-group">
-	<%= f.password_field :password, placeholder: "Password", class: 'form-control' %>
-	</div>
-
-	<div class="form-group">
-	<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: 'form-control' %>
-	</div>
-	
-	<div class="form-group">
-	<%= f.file_field :avatar %>
-	</div>
-
-	<%= f.submit "Submit", class: 'btn btn-primary'%>
-
-	<% end %>
 
 
 </div>

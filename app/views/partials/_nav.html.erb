@@ -1,5 +1,6 @@
 
 <% if current_barber %> 
+<div id="gutter">
 	<nav class="navbar navbar-default mynav" role="navigation">
 		<div class="container-fluid">
 
@@ -29,12 +30,14 @@
 				<li class =""><%= link_to "EDIT", edit_barber_path(current_barber), :class => "fontwhite" %></li>
 				<li class =""><%= link_to "LOGOUT", session_path(current_barber), method: :delete, html:{style:"color: black;"}, :class => "fontwhite" %></li>
 				<li class =""><%= link_to (image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), barber_path(current_barber) %></li>
+</div> <!-- end of gutter whole page -->
 		
 
 			 
 
 <% elsif current_user %> 
 
+<div id="gutter">
 <nav class="navbar navbar-default mynav" role="navigation">
 		<div class="container-fluid">
 
@@ -58,17 +61,16 @@
 				<li class =""><%= link_to "EDIT PROFILE", edit_customer_path(current_user), method: :get, :class => "fontwhite"  %></li>
 				<li class =""><%= link_to "LOGOUT", session_path(current_user), method: :delete, html:{style:"color: black;"}, :class => "fontwhite"  %></li>
 				<li class =""><%= link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), customer_path(current_user) %></li>
-
-
+</div>
 
 
 <% else !current_barber || !current_user %> 
 
-
+<div id="gutter">
 	<nav class="navbar navbar-default mynav" role="navigation">
 		<div class="container-fluid">
 
-			<div class="navbar-header">
+			<div class="navbar-header"><%= image_tag "logo.png", size: "220x62", class: "logo2" %> 
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
 		        <span class="icon-bar"></span>
@@ -81,8 +83,8 @@
 		      </a>
 			</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<a class="navbar-brand"><%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
+			<div class="collapse navbar-collapse" id="navigation bs-example-navbar-collapse-1">
+			<%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
 			<ul class="nav navbar-nav navbar-right">	
 				<li class ="loginbtn"><%= link_to "ABOUT", pages_about_path, method: :get, :class => "fontwhite" %></li>
 				<li class ="loginbtn"><%= link_to "HOME", root_path, method: :get, :class => "fontwhite" %></li>	
@@ -92,9 +94,7 @@
 </ul><!-- end of ul -->
 </nav> <!-- end of nav bar -->
 </div> <!-- end of nav bar collapse -->
-
-
-
+</div>
 
 
 
