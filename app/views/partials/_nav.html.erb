@@ -70,24 +70,26 @@
 	<nav class="navbar navbar-default mynav" role="navigation">
 		<div class="container-fluid">
 
-			<div class="navbar-header"><%= image_tag "logo.png", size: "220x62", class: "logo2" %> 
+		
+
+			<div class="navbar-header">
+			<%= link_to root_url do %>
+ 				 <%= image_tag "logo.png", size: "220x62", class: "logo2" %>
+			<% end %>
 			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a href="<%= barbers_path %>" class="navbar-brand">
-		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
-		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
-		      </a>
+		      <a href="<%= barbers_path %>" class="navbar-brand"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navigation bs-example-navbar-collapse-1">
 			<%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
 			<ul class="nav navbar-nav navbar-right">	
 				<li class ="loginbtn"><%= link_to "ABOUT", pages_about_path, method: :get, :class => "fontwhite" %></li>
-				<li class ="loginbtn"><%= link_to "HOME", root_path, method: :get, :class => "fontwhite" %></li>	
+			<!-- 	<li class ="loginbtn"><%= link_to "HOME", root_path, method: :get, :class => "fontwhite" %></li>	 -->
 				<li class ="loginbtn"><%= link_to "LOGIN", new_session_path, method: :get, :class => "fontwhite" %></li>
 				
 <% end %>

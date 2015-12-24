@@ -3,9 +3,9 @@ Root Page
 ****************************/
 * { box-sizing: border-box; }
 
+/*HELPER CLASSES*/
 .clearfix {  overflow: auto;}
 #gutter { max-width: 960px; margin: 0 auto; box-shadow: 0px 0px 100px -45px }
-
 .landing { height: 500px; width: 100%; position: relative;}
 .overlay { height: 499px; width: 100%; background-color: black; position: absolute; z-index: 10000; opacity: .30; }
 
@@ -17,6 +17,7 @@ Root Page
 .fact-icons h5 {margin: 20px auto 10px;font-size: 30px;color: #000000;}
 .fact-icons p {font-family: 'Lato', sans-serif;font-weight: 400;text-align: center;margin-top: -12px;}
 .how { background: #fff; margin: 0 auto;padding-top: 50px; }
+.how-works h1, .how h1 { font-weight: 300}
 .how-works h1, .how-works h5, .how-works p,
 .how h1, .how h5, .how p { font-family: 'Lato', sans-serif; }
 .how h1 {font-size: 2.4em;text-align: center; white-space: nowrap;width: 355px; }
@@ -29,41 +30,17 @@ Root Page
 
 /*CUSTOMERS NEW STYLES*/
 #sign-up-container {background: rgba(0,0,0,0.4); border-radius: 2px;box-shadow: 0 0 10px 0px black;; width: 60%;height: 450px;margin: 0 auto;padding-top: 50px;padding-left: 2%; padding-right: 2%;}
-
 .logo-home-page {padding-top: 100px; }
-
 .sign-up { text-align: center;padding-top: 10px;}
-
 .fresh {color: white;font-family: 'Lato', sans-serif;padding-top: 0px;}
+.header {background: url('barbershop.png');background-repeat: no-repeat;width: 100%;height: 100%;top: 0;position: absolute;-webkit-background-size: cover;background-size: cover;}
 
-.header {
-  background: url('barbershop.png');
-  background-repeat: no-repeat;
-  width: 100%;
-  top: 0;
-  position: absolute;
-  margin-top: 0px;
-  bottom: 0 !important;
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  background-size: cover;
-}
+#about-page .header2 { background-image: url('barberchair.png'); background-color: gray; background-repeat: no-repeat;width: 100%;height: 100vh;top: 0;position: absolute;-webkit-background-size: cover;background-size: cover;}
+#about-page .header2 .landing { height: 800px !important;}
+#about-page .landing .overlay { z-index: 800; height: 100vh}
+#about-page .header2 h3 { position: relative; color: #fff;font-family: Lato;font-weight: 100;font-size: 34px; padding-top: 60px;z-index: 1000}
+#about-page .header2 p { position: relative;font-family: 'Lato';color: #fff;font-weight: 300;padding-top: 2%;width: 400px;text-align: justify;margin: 0 auto;z-index: 1000}
 
-
-.header2 {
-  background-image: url('barberchair.png');
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    height: 92.8%;
-    position: absolute;
-    margin-top: -23px;
-    bottom: 0 !important;
-}
 
 .header3 {
   background: url('barbershop.png');
