@@ -2,28 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.txt-box {
-  display: block;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  border-bottom: 2px solid #fff; 
-  color: #eeeeee;
-  font-size: 1em;
-  font-weight: 200;
-  width: 100px;
-  border-bottom: 1px solid #EFEC4F;
-  height: 30px;
-  margin-bottom: 20px;
-  border-radius:2px;
-  transition: .15s all ease-out
+.txt-box {font-family: 'Lato';font-weight: 300;display: block;background: transparent;border: 0;outline: 0;font-size: 1em;width: 60%;border-bottom: 1px solid rgba(113, 209, 255, 0.29);height: 40px;margin-bottom: 20px;border-radius:2px;transition: .45s all ease-out
 }
 .txt-box:focus { 
   width: 100%;
+  font-size: 1.1em;
   outline: none;
-  border-bottom: 1px solid #081031;
-  padding-top: 10px;
-  transition: .15s all ease-out
+  border-bottom: 1px solid dodgerblue;
+  padding-bottom: 20px;
+  transition: .45s all ease-out
 }
 
 .thumbnail {
@@ -43,7 +30,7 @@
 	width: 150px;
 	margin: 0 auto;
 	height: auto;
-	padding-top: 70px;
+	padding-top: 30px;
 }
 
 .page-divider {

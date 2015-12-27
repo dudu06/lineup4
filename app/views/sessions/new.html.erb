@@ -1,20 +1,20 @@
 <div id="gutter">
-<div class="header3">	
-	<div class="text-center">
-    <br /> <br />
-	<%= image_tag "bearded-man.png", size: "250x250", class: "mylogo" %>
-	</div><br />
-	<h1 class="fresh"> READY TO GET FRESH? </h1><br /><br />
-<div class="log-in">
-		<div class="form-group inputsmy">
-			<%= form_for :session, :url => sessions_path do |f| %>
+	<div class="landing">
+		<div class="login-page text-center">	
+			<div class="overlay"></div>
+			<div class="log-in">
+			<%= image_tag "bearded-man.png", size: "250x250", class: "mylogo" %>
+			<h1 class="fresh"> READY TO GET FRESH? </h1><br /><br />
+				<div class="form-group inputsmy">
+					<%= form_for :session, :url => sessions_path do |f| %>
 
-				<%= f.text_field :email, placeholder: "E-mail", :class => "form-control" %><br />
+					<%= f.text_field :email, placeholder: "E-mail", :class => "form-control", class: 'txt-box' %><br />
 
-				<%= f.password_field :password, placeholder: "Password", :class => "form-control" %><br />
-			<%= f.submit "LOGIN", class: 'btn btn-primary btn-wide' %> 
-			<% end %>
-			</div>
-		</div>
-</div>
-</div>
+					<%= f.password_field :password, placeholder: "Password", :class => "form-control", class: 'txt-box' %><br />
+					<%= f.submit "LOGIN", class: 'btn btn-primary btn-wide' %> 
+					<% end %>
+				</div> 
+			</div><!--  end of log in -->
+		</div> <!-- end of header3 --> 
+	</div> <!-- end of landing -->
+</div> <!-- end of gutter -->

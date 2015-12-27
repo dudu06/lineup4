@@ -26,7 +26,7 @@
 html, body { padding: 0; margin: 0; height: 100%; width: 100%; box-sizing: border-box; }
 h1 { font-size: 2.5em}
 
-body { background-color: #081031 }
+body { background-color: #E1ECF3}
 .white-bg { background: #fff; width: 100%; height: 100% }
 
 input[type="submit"] {
@@ -76,14 +76,15 @@ Home Page once logged in
 }
 
 .btn-primary {
-	background-color: red;
-	font-weight: 100;
-	border: none;
+    background-color: transparent;
+    width: 150px;
+    font-weight: 100;
+    border: 1px solid blue;
+    color: blue;
+    font-weight: 600;
+    border-radius: 0;
 }
-
-.btn-primary:hover {
-  background-color: #B51013;
-}
+.btn-primary { background: transparent;}
 
 .inputsmy {
 	width: 400px;

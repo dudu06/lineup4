@@ -1,8 +1,8 @@
 <div id="gutter" class="white-bg">
 		<div class="spacer"></div>
 
-	<div id="sign-up-container">
-		<h1>READY TO LOOK FANTASTIC?</h1><br>
+	<div id="sign-up-container" class="customer-signup">
+		<h1>CUSTOMER SIGN UP</h1><br>
 		<%= form_for @customers, html: { class: "directUpload" } do |f| %> 
 		<div class="form-group">
 			<%= f.text_field :email, placeholder: "E-Mail", class: 'txt-box' %>
@@ -23,7 +23,7 @@
 			<%= f.file_field :avatar %>
 		</div>
 
-		<%= f.submit "Submit", class: 'btn btn-primary'%>
+		<%= f.submit "Sign Up", class: 'btn btn-primary'%>
 
 		<% end %>
 	</div>
