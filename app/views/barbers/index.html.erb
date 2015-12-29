@@ -1,31 +1,32 @@
 <script>
 $(function() {
- 
+  // var barberSearchPage = $(".find-barber-section"),
+  // var noBarberErrorMessage = $(".no-barbers");
+  // var barbersDisplayed = $("#barbers");
+
   $("#barbers_search input").keyup(function() {
-    $.get($("#barbers_search").attr("action"), $("#barbers_search").serialize(), null, "script");
-    return false;
+    $.get($("#barbers_search").attr("action"), 
+    $("#barbers_search").serialize(), null, "script");
+    // $("h3.no-barbers").show();
+    // return false;
   });
-  
+
+  function showErrorMessage() {
+    if($("#search") != $("#barbers_search input")) {
+    	$("h3.no-barbers").show();
+    }
+  }
+
 });
-
-
 </script>
 
-<div class="find-barber">
-<h1>SEARCH FOR A BARBER</h1>
-</div>
-
-
-<%= form_tag barbers_path, :method => 'get', :id => "barbers_search" do %>
-  <p>
-    <%= text_field_tag :search, params[:search], :placeholder => "Enter Your Zipcode Here" %>
-    <%#= submit_tag "Search" %>
-  </p>
- 
-<% end %>
-
-
-<div id="barbers">
-<%= render 'barbers' %>
-</div>
-
+<div id="gutter" class="find-barber-section">
+	<h1>SEARCH FOR A BARBER</h1>
+	<%= form_tag barbers_path, :method => 'get', :id => "barbers_search" do %>
+	    <%= text_field_tag :search, params[:search], :placeholder => "Enter Your Zipcode Here", class: 'txt-box' %>
+	<% end %>
+	<div id="barbers">
+		<%= render 'barbers' %>
+	</div>
+	<h3 class="no-barbers text-center">Sorry, no barbers were found in that zipcode...</h3>
+</div> <!-- end of find-barber-page -->

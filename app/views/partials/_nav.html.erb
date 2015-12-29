@@ -5,95 +5,96 @@
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a href="<%= barbers_path %>" class="navbar-brand">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="<%= barbers_path %>" class="navbar-brand">
 		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
 		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
-		      </a>
-		  <ul class="nav navbar-nav navbar-left">
-			
-			
-			</ul>
-			</div>
+		    </a>
+		    <ul class="nav navbar-nav navbar-left">
+		    	
+		    	
+		    </ul>
+		</div>
 
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<a class="navbar-brand"><%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
-			<ul class="nav navbar-nav navbar-right">
-				<li class =""><%= link_to "SEARCH BARBERS", barbers_path, :class => "fontwhite" %></li>
-				<li class =""><%= link_to "NEW PICTURE", new_barber_portfolio_path(current_barber), :class => "fontwhite" %></li>
-				<li class =""><%= link_to "EDIT", edit_barber_path(current_barber), :class => "fontwhite" %></li>
-				<li class =""><%= link_to "LOGOUT", session_path(current_barber), method: :delete, html:{style:"color: black;"}, :class => "fontwhite" %></li>
-				<li class =""><%= link_to (image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), barber_path(current_barber) %></li>
-</div> <!-- end of gutter whole page -->
-		
+				<ul class="nav navbar-nav navbar-right">
+					<li class =""><%= link_to "SEARCH BARBERS", barbers_path, :class => "fontwhite" %></li>
+					<li class =""><%= link_to "NEW PICTURE", new_barber_portfolio_path(current_barber), :class => "fontwhite" %></li>
+					<li class =""><%= link_to "EDIT", edit_barber_path(current_barber), :class => "fontwhite" %></li>
+					<li class =""><%= link_to "LOGOUT", session_path(current_barber), method: :delete, html:{style:"color: black;"}, :class => "fontwhite" %></li>
+					<li class =""><%= link_to (image_tag current_barber.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), barber_path(current_barber) %></li>
+				</ul>
+			</div> <!-- end of gutter whole page -->
+			
 
-			 
+			
 
-<% elsif current_user %> 
+			<% elsif current_user %> 
 
-<div id="gutter">
-<nav class="navbar navbar-default mynav" role="navigation">
-		<div class="container-fluid">
+			<div id="gutter">
+				<nav class="navbar navbar-default mynav" role="navigation">
+					<div class="container-fluid">
 
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a href="<%= barbers_path %>" class="navbar-brand">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="<%= barbers_path %>" class="navbar-brand">
 		        <!-- image_tag 'Brand1.png', class: 'nav-logo' 
 		        image_tag 'Brand.png', class: 'nav-logo-name'  -->
-		      </a>
-			</div>
+		    </a>
+		</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<a class="navbar-brand"><%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
-			<ul class="nav navbar-nav navbar-right">
-				<li class =""><%= link_to "SEARCH BARBERS", barbers_path, method: :get, :class => "fontwhite"  %></li>
-				<li class =""><%= link_to "EDIT PROFILE", edit_customer_path(current_user), method: :get, :class => "fontwhite"  %></li>
-				<li class =""><%= link_to "LOGOUT", session_path(current_user), method: :delete, html:{style:"color: black;"}, :class => "fontwhite"  %></li>
-				<li class =""><%= link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), customer_path(current_user) %></li>
-</div>
-
-
-<% else !current_barber || !current_user %> 
-
-<div id="gutter">
-	<nav class="navbar navbar-default mynav" role="navigation">
-		<div class="container-fluid">
-
-		
-
-			<div class="navbar-header">
-			<%= link_to root_url do %>
- 				 <%= image_tag "logo.png", size: "220x62", class: "logo2" %>
-			<% end %>
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a href="<%= barbers_path %>" class="navbar-brand"></a>
+				<ul class="nav navbar-nav navbar-right">
+					<li class =""><%= link_to "SEARCH BARBERS", barbers_path, method: :get, :class => "fontwhite"  %></li>
+					<li class =""><%= link_to "EDIT PROFILE", edit_customer_path(current_user), method: :get, :class => "fontwhite"  %></li>
+					<li class =""><%= link_to "LOGOUT", session_path(current_user), method: :delete, html:{style:"color: black;"}, :class => "fontwhite"  %></li>
+					<li class =""><%= link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle img-profile", width: 40, height: 40), customer_path(current_user) %></li>
+				</ul>
 			</div>
 
-			<div class="collapse navbar-collapse" id="navigation bs-example-navbar-collapse-1">
-			<%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
-			<ul class="nav navbar-nav navbar-right">	
-				<li class ="loginbtn"><%= link_to "ABOUT", pages_about_path, method: :get, :class => "fontwhite" %></li>
-			<!-- 	<li class ="loginbtn"><%= link_to "HOME", root_path, method: :get, :class => "fontwhite" %></li>	 -->
-				<li class ="loginbtn"><%= link_to "LOGIN", new_session_path, method: :get, :class => "fontwhite" %></li>
-				
-<% end %>
-</ul><!-- end of ul -->
-</nav> <!-- end of nav bar -->
-</div> <!-- end of nav bar collapse -->
-</div>
+
+			<% else !current_barber || !current_user %> 
+
+			<div id="gutter">
+				<nav class="navbar navbar-default mynav" role="navigation">
+					<div class="container-fluid">
+
+						
+
+						<div class="navbar-header">
+							<%= link_to root_url do %>
+							<%= image_tag "logo.png", size: "220x62", class: "logo2" %>
+							<% end %>
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="<%= barbers_path %>" class="navbar-brand"></a>
+						</div>
+
+						<div class="collapse navbar-collapse" id="navigation bs-example-navbar-collapse-1">
+							<%= image_tag "logo.png", size: "220x62", class: "text-center logo" %> 
+							<ul class="nav navbar-nav navbar-right">	
+								<li class ="loginbtn"><%= link_to "ABOUT", pages_about_path, method: :get, :class => "fontwhite" %></li>
+								<li class ="loginbtn"><%= link_to "LOGIN", new_session_path, method: :get, :class => "fontwhite" %></li>
+								
+								<% end %>
+							</ul><!-- end of ul -->
+						</nav> <!-- end of nav bar -->
+					</div> <!-- end of nav bar collapse -->
+				</div>

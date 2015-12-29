@@ -5,15 +5,21 @@ Root Page
 
 /*HELPER CLASSES*/
 .clearfix {  overflow: auto;}
-#gutter { max-width: 960px; margin: 0 auto; box-shadow: 0px 0px 100px -45px }
+.full { width: 100%; }
+.logo { display: none; }
+.logo2 { margin-top: 25px; }
+#gutter { max-width: 960px; margin: 0 auto; box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.2)}
 .landing { height: 500px; width: 100%; position: relative;}
 .overlay { height: 499px; width: 100%; background-color: black; position: absolute; z-index: 10000; opacity: .50; }
+.navbar-default .logo2 { margin: 25px 0 0 0;}
+.navbar-toggle { margin-top: 35px;}
+
 
 
 /*HOME PAGE SECTION STYLES*/
-.section-1 { background: #fff; padding-top: 30px; margin: auto;border-bottom: 1px solid red;}
-.fact-icons { width: 90%; height: 360px; margin: auto;padding: 20px 0 0; }
-.section-1 .fact-icons li, .section-2 .fact-icons li {width: 33%;padding: 0;margin: 0;display: inline-block; height: 320px;vertical-align: text-top;text-align: center; }
+.section-1 { background: #fff; padding-top: 30px; margin: auto;border-bottom: 1px solid red; }
+.fact-icons { width: 90%; margin: auto;padding: 20px 0 0; }
+.section-1 .fact-icons li, .section-2 .fact-icons li {width: 32%;padding: 0;margin: 0;display: inline-block; height: 320px;vertical-align: text-top;text-align: center; }
 .fact-icons h5 {margin: 20px auto 10px;font-size: 30px;color: #000000;}
 .fact-icons p {font-family: 'Lato', sans-serif;font-weight: 400;text-align: center;margin-top: -12px;}
 .section-2 { background: #fff; margin: 0 auto;padding-top: 50px; }
@@ -26,9 +32,25 @@ Root Page
 .fact-icons li img { max-width: 450px; min-width: 250px;}
 .section-2 ul.fact-icons li img { min-width: 220px}
 /*END OF HOME PAGE SECTION STYLES*/
+/*HOOK ON HOME PAGE*/
+#hook { position: relative; margin-top: 15%; text-align: center; z-index: 20000;}
+#hook h1 { font-family: 'Lato', sans-serif;font-weight: Ultra-Bold 900;font-size: 2.5em;color: white;text-align: center;letter-spacing: 6px; line-height: 45px}
+#hook h3 { font-family: 'Grand Hotel', cursive; font-weight: 400; font-size: 3em; font-style: italic; color: white; text-align: center; }
+/*END OF HOOK*/
+/*HOME PAGE CTA BUTTON STATES*/
+#button1 p, #button2 p {font-family: 'Lato', sans-serif; font-weight: 100;font-size: 1.2em;text-align: center;color: #fff;vertical-align:middle;}
+#button1, #button3 { border-radius: 0px; width: 48%;margin: .5%;}
+#button1 { margin-right: 7px}
+/*#button2 {background-color: red;width: 280px;height: 39px;margin-left: auto;margin-right: auto;margin-top: 6%;border-radius: 4px;cursor: pointer;}*/
+#button1:hover, #button3:hover { background: none; border: 1px solid rgba(255,73,73,1); color: rgba(255,73,73,1);}
+.button-wrapper { margin: 40px auto; width: 60%;height:60px;}
+.ctas { position: relative; margin: auto; max-width: 960px;  z-index: 12000;}
+.sign-up-button {float: left; background-color: transparent; line-height: 2.4; border: 1px solid #fff; margin-top: 15px; color: white; font-size: 1.1em; min-width: 280px; transition: all 1s ease;}
+/*END OF HOME PAGE CTA BUTTON STATES*/
 
 
-/*CUSTOMERS NEW STYLES*/
+
+/*CUSTOMERS SIGN UP NEW STYLES*/
 #sign-up-container {background: #F6F4E8; border-radius: 2px;box-shadow: 0 30px 52px 4px rgba(0,0,0,0.25); width: 60%;height: 500px;margin: 0 auto;padding-top: 50px;padding-left: 2%; padding-right: 2%;}
 .customer-signup h1, .barber-signup h1 { font-weight: 300;color: rgba(0,0,0,0.35);}
 .logo-home-page {padding-top: 100px; }
@@ -36,30 +58,28 @@ Root Page
 .fresh {color: white;font-family: 'Lato', sans-serif;padding-top: 0px;}
 .header {background: url('barbershop.png');background-repeat: no-repeat;width: 100%;height: 100%;top: 0;position: absolute;-webkit-background-size: cover;background-size: cover;}
 
+
+
+/*ABOUT PAGE STYLES*/
 #about-page .header2 { background-image: url('barberchair2.png'); -webkit-filter:brightness(1); background-color: gray; background-repeat: no-repeat;width: 100%;height: 100vh;top: 0;position: absolute;-webkit-background-size: cover;background-size: cover;}
 #about-page .header2 .landing { height: 800px !important;}
 #about-page .landing .overlay { z-index: 800; height: 100vh; opacity: .70;}
 #about-page .header2 h3 { position: relative; color: #fff;font-family: Lato;font-weight: 100;font-size: 34px; padding-top: 60px;z-index: 1000}
 #about-page .header2 p { position: relative;font-family: 'Lato';color: #fff;font-weight: 300;padding-top: 2%;width: 400px;text-align: justify;margin: 0 auto;z-index: 1000}
+/*END OF ABOUT PAGE STYLES*/
+
+
 
 /*LOGIN PAGE STYLES*/
 .login-page h1 { font-weight: 300 }
 .login-page { background: url('barbershop.png'); background-repeat: no-repeat;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;width: 100%;height: 100vh; top: 0;position: absolute;margin-top: 0px;bottom: 0 !important;}
 .login-page .overlay { height: 100vh}
-.login-page .btn-primary { border: 1px solid #fff;color: #fff;}
+.login-page .btn-primary { border: 1px solid #fff;color: #fff; float: left;}
+.login-page .btn-primary:hover { background: none; color: rgba(255,73,73,1); border: 1px solid rgba(255,73,73,1); }
 .login-page .txt-box { color: #fff}
 .log-in h1 { padding-bottom: 20px}
+.btn-wide { width: 100px;transition: .20s ease-in-out;-webkit-transition:.20s ease-in-out;-moz-transition:.20s ease-in-out;-o-transition:.20s ease-in-out;}
 
-
-
-
-.btn-wide {
-  width: 100px;
-  transition: .20s ease-in-out;
-  -webkit-transition:.20s ease-in-out;
-  -moz-transition:.20s ease-in-out;
-  -o-transition:.20s ease-in-out;
-}
 
 .imageic {font-size: 10em;margin-bottom: .3em;}
 .imageict {font-size: 7em;margin-bottom: .3em;}
@@ -74,23 +94,11 @@ Root Page
 
 /*NAVIGATION STYLES*/
 /*NAV LINK COLORS - */
-#navigation { }
 .navbar-default .navbar-nav > li > a { color: #999999;-webkit-transition: color .35s ease-out}
 .fontwhite:active { color: red !important; font-family: 'Lato', sans-serif;letter-spacing: 2px; font-size: 1em;}
 .fontwhite:hover { color: red !important; font-family: 'Lato', sans-serif; letter-spacing: 2px; font-size: 1em;}
 
-/*SIGN-UP-BUTTONS*/
-.button-wrapper { padding: 0 20% 0 20%; margin-top: 40px;}
-.ctas { position: relative; margin: auto; max-width: 960px;  z-index: 12000;}
-.sign-up-button {border-radius: 2px; float: left; background-color: transparent; line-height: 2.4; border: 1px solid #fff; margin-top: 15px; color: white; letter-spacing: 3px; font-size: 1.1em; min-width: 280px; transition: all 1s ease;}
 
-/*HOOK ON HOME PAGE*/
-#hook { position: relative; margin-top: 15%; text-align: center; z-index: 20000;}
-#hook h1 { font-family: 'Lato', sans-serif;font-weight: Ultra-Bold 900;font-size: 2.5em;color: white;text-align: center;letter-spacing: 6px; line-height: 45px}
-#hook h3 { font-family: 'Grand Hotel', cursive; font-weight: 400; font-size: 3em; font-style: italic; color: white; text-align: center; }
-#button1, #button3 {  }
-#button1:hover, #button3:hover { background-color: #B51013; }
-#button1 { margin-right: 7px}
 
 .barber_button { width: 300px;height: 60px;background-color: blue;border-radius: 40px;}
 
@@ -103,38 +111,18 @@ Root Page
 
 #button1-post { margin-left: 47%; margin-right: 26%;}
 
-#button2 {
-background-color: red;
-width: 280px;
-height: 39px;
-margin-left: auto;
-margin-right: auto;
-margin-top: 6%;
-border-radius: 4px;
-cursor: pointer;
-}
-
-#button1, #button3 { border-radius: 0px}
-#button1 p, #button2 p {font-family: 'Lato', sans-serif; font-weight: 100;ont-size: 1.2em;text-align: center;color: #fff;vertical-align:middle;}
 .navbar-nav.navbar-right:last-child {margin-right: 32px !important;margin-top: 20px; }
-
-
-/*HELPER CLASSES!*/
-.gutter { margin: auto; }
-.full { width: 100%; }
-.yellow-bg { background-color: #F6DC3B; }
-.logo { display: none; }
-.logo2 { margin-top: 25px; }
-.navbar-default .logo2 { margin: 25px 0 0 0;}
-.navbar-toggle { margin-top: 35px;}
-
 
 .nav li a { color: red;}
 .navbar { margin-bottom: 0; border-bottom: 1px solid red; border-radius: 0;}
 
 
 /* MEDIA QUERY BEGINS HERE */
-@media screen and (min-width: 575) {
+@media screen and (max-width: 768px) { 
+  .section-1 .fact-icons li, .section-2 .fact-icons li { width: 100%; overflow: hidden}
+  .button-wrapper { width: 90%;}
+  #button1, #button3 { width: 100%}
+  #button1 { margin-bottom: 30px}
 }
 
 @media screen and (max-width: 575px) {
@@ -144,18 +132,13 @@ cursor: pointer;
 }
 
 @media screen and (max-width: 620px) {
+  #button1 { margin-bottom: 20px}
   .how-works .fact-icons li { width: 100%; }
-  #hook { margin-top: 225px; }
-  #hook h1 { font-family: 'Lato', sans-serif; font-weight: Ultra-Bold 900; font-size: 2em; color: white; line-height: 40px; text-align: center; letter-spacing: 1px; }
-  #button1, #button3 { width: 90%; }
+  #hook { margin-top: 120px; }
+  #hook h1 { font-family: 'Lato', sans-serif; font-weight: Ultra-Bold 900; font-size: 1.8em; color: white; line-height: 40px; text-align: center; letter-spacing: 1px; }
+  #button1, #button3 { width: 100%; }
   .nav { padding: none; }
   /*.navbar-collapse .navbar-nav .navbar-right:last-child { margin-right: 0;}*/
   .navbar-nav.navbar-right:last-child  { margin-right: 0; margin: auto;}
   .navbar-brand { padding: none; }
-}
-
-@media all and (max-width: 767px){
-}
-
-@media all and (max-width: 800px){  
 }

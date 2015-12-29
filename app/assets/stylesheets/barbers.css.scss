@@ -2,16 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.txt-box {font-family: 'Lato';font-weight: 300;display: block;background: transparent;border: 0;outline: 0;font-size: 1em;width: 60%;border-bottom: 1px solid rgba(113, 209, 255, 0.29);height: 40px;margin-bottom: 20px;border-radius:2px;transition: .45s all ease-out
-}
-.txt-box:focus { 
-  width: 100%;
-  font-size: 1.1em;
-  outline: none;
-  border-bottom: 1px solid dodgerblue;
-  padding-bottom: 20px;
-  transition: .45s all ease-out
-}
+.txt-box {font-family: 'Lato';font-weight: 300;display: block;background: transparent;border: 0;outline: 0;font-size: 1em;width: 60%;border-bottom: 1px solid rgba(113, 209, 255, 0.29);height: 40px;margin-bottom: 20px;border-radius:2px;transition: .45s all ease-out}
+.txt-box:focus { width: 100%;font-size: 1.1em;outline: none;border-bottom: 1px solid dodgerblue;padding-bottom: 20px;transition: .45s all ease-out}
+
+/*SEARCH BARBERS PAGE*/
+.find-barber-section { background: #fff; padding: 50px 0 50px 0; height: 200%;}
+.find-barber-section h1 { font-weight: 300}
+.find-barber-section .txt-box { text-align: center;}
+.find-barber-section .txt-box:focus { font-size: 1.5em;}
+
+.no-barbers { font-family: 'Lato'; font-size: 1.2em; text-align: center; display: none}
+
+/*SEARCH BAR ON BARBERS INDEX PAGE*/
+p, #search { width: 310px; margin: 40px auto;}
 
 .thumbnail {
 	margin-bottom: 7px;
